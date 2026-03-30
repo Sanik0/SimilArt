@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-black">
+<body class="bg-[#000A04]">
     <!-- NAVIGATION -->
     <nav class="fixed w-full z-50 py-3 top-0 start-0 border-b border-white/5"
         style="background: rgba(0,0,0,0.75); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
@@ -110,8 +110,7 @@
         </div>
     </nav>
     <!-- JUMBOTRON -->
-
-    <section class="bg-black mt-30 relative overflow-hidden">
+    <section class="bg-[#000A04] mt-30 relative overflow-hidden pb-10 md:pb-15">
         <div class="py-8 px-4 mx-auto max-w-screen-2xl text-center lg:py-16">
             <h1 class="mb-6 text-4xl font-medium tracking-tighter text-white md:text-5xl lg:text-6xl">We invest in the <br> world’s potential</h1>
             <p class="mb-8 text-base font-normal text-gray-300 md:text-xl">Here at Flowbite we focus on markets where technology, innovation, <br> and capital can unlock long-term value and drive economic growth.</p>
@@ -126,7 +125,7 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
                             </svg>
                         </div>
-                        <input type="search" id="search" class="block backdrop-blur-4xl w-full p-3 ps-9 bg-transparent border border-gray-500 text-gray text-sm rounded-full focus:ring-green-600 focus:border-green-600 focus:shadow-[0_0_20px_rgba(16,185,80,0.4)] shadow-xs placeholder:text-gray-400 transition-shadow duration-300" placeholder="Search" required />
+                        <input type="search" id="search" class="block backdrop-blur-4xl w-full p-3 ps-9 bg-transparent border border-gray-500 text-gray text-sm rounded-full focus:ring-green-600 focus:border-green-600 focus:shadow-[0_0_20px_rgba(16,185,80,0.4)] shadow-xs placeholder:text-gray-400 transition-shadow duration-300" placeholder="Search for an artist" required />
                         <!-- <button type="button" class="absolute end-1.5 bottom-1.5 text-black bg-green-600 hover:bg-green-600 transition-all duration-300 border border-transparent focus:ring-4 focus:ring-green-300 shadow-xs font-medium leading-5 rounded-full text-xs px-3 py-1.5 focus:outline-none">Go</button> -->
                     </div>
                 </form>
@@ -135,9 +134,44 @@
             </div>
         </div>
         {{-- Bottom glow --}}
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[200px] pointer-events-none"
-            style="background: radial-gradient(ellipse at bottom, rgba(16,185,80,0.25) 0%, rgba(16,185,80,0.08) 50%, transparent 70%); filter: blur(20px);">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-30 pointer-events-none"
+            style="background: radial-gradient(ellipse at bottom, rgba(200,255,220,0.35) 0%, rgba(16,185,80,0.2) 30%, rgba(16,185,80,0.06) 60%, transparent 75%); filter: blur(20px);">
         </div>
+    </section>
+    <!-- ARTISTS -->
+    <section class="w-full flex items-center justify-center">
+        <div class="w-full rounded-lg p-20 self-center bg-[#000A04] h-100 max-w-7xl relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 h-0.5 w-full bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+            {{-- Top glow --}}
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-30 pointer-events-none"
+                style="background: radial-gradient(ellipse at top, rgba(200,255,220,0.35) 0%, rgba(16,185,80,0.2) 30%, rgba(16,185,80,0.06) 60%, transparent 75%); filter: blur(20px);">
+            </div>
+
+            <div class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md max-w-[300px] w-full border-[0.1px] border-[#323232] rounded-3xl">
+                <button id="dropdownButton" data-dropdown-toggle="dropdown" class="absolute top-2 end-2 text-body hover:text-heading bg-green-600 box-border border border-transparent hover:bg-neutral-tertiary focus:ring-4 focus:ring-neutral-tertiary rounded-full mt-5 mr-5 p-1.5 focus:outline-none" type="button">
+                    <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="3" d="M6 12h.01m6 0h.01m5.99 0h.01" />
+                    </svg>
+                </button>
+                <div class="flex flex-col gap-1 items-center">
+                    <div class="w-24 h-24 mb-6 mt-5 bg-white rounded-full"></div>
+                    <h5 class="mb-0.5 text-2xl font-regular tracking-tight text-white">Bonnie Green</h5>
+                    <span class="text-sm text-gray-300">RnB | Hip Hop | Rap</span>
+                    <span class="text-sm text-gray-300">#10 in the world</span>
+                    <span class="text-sm text-gray-300">20,000,456 monthly listeners</span>
+                    <div class="flex overflow-hidden mt-4 md:mt-6 flex-col w-full">
+                        <a type="button" class="inline-flex justify-center items-center text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-md text-center p-4">
+                            Listen on Spotify
+                        </a>
+                        <a type="button" class="inline-flex overflow-hidden justify-center items-center text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-md text-center p-4">
+                            Listen on Apple music
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </section>
 
 </body>
