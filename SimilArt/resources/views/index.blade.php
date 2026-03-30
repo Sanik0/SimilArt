@@ -109,7 +109,36 @@
             </a>
         </div>
     </nav>
-  
+    <!-- JUMBOTRON -->
+
+    <section class="bg-black mt-30 relative overflow-hidden">
+        <div class="py-8 px-4 mx-auto max-w-screen-2xl text-center lg:py-16">
+            <h1 class="mb-6 text-4xl font-medium tracking-tighter text-white md:text-5xl lg:text-6xl">We invest in the <br> world’s potential</h1>
+            <p class="mb-8 text-base font-normal text-gray-300 md:text-xl">Here at Flowbite we focus on markets where technology, innovation, <br> and capital can unlock long-term value and drive economic growth.</p>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 md:space-x-4">
+
+
+                <form class="w-full max-w-xl">
+                    <label for="search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="search" id="search" class="block backdrop-blur-4xl w-full p-3 ps-9 bg-transparent border border-gray-500 text-gray text-sm rounded-full focus:ring-green-600 focus:border-green-600 focus:shadow-[0_0_20px_rgba(16,185,80,0.4)] shadow-xs placeholder:text-gray-400 transition-shadow duration-300" placeholder="Search" required />
+                        <!-- <button type="button" class="absolute end-1.5 bottom-1.5 text-black bg-green-600 hover:bg-green-600 transition-all duration-300 border border-transparent focus:ring-4 focus:ring-green-300 shadow-xs font-medium leading-5 rounded-full text-xs px-3 py-1.5 focus:outline-none">Go</button> -->
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+        {{-- Bottom glow --}}
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[200px] pointer-events-none"
+            style="background: radial-gradient(ellipse at bottom, rgba(16,185,80,0.25) 0%, rgba(16,185,80,0.08) 50%, transparent 70%); filter: blur(20px);">
+        </div>
+    </section>
 
 </body>
 
