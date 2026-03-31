@@ -426,6 +426,30 @@
             color: #4ade80;
         }
 
+        .artist-float {
+            transition: transform 0.2s ease;
+            will-change: transform;
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        .artist-float:hover {
+            transform: scale(1.12) !important;
+            animation-play-state: paused;
+        }
+
+        .artist-float:hover img {
+            box-shadow: 0 0 20px rgba(16, 185, 80, 0.7), 0 0 40px rgba(16, 185, 80, 0.3);
+        }
+
+        .artist-float span {
+            transition: color 0.3s ease;
+        }
+
+        .artist-float:hover span {
+            color: #4ade80;
+        }
+
         .skeleton {
             background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 25%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.04) 75%);
             background-size: 200% 100%;
@@ -460,11 +484,6 @@
             }
         }
 
-        .artist-float {
-            opacity: 1;
-            cursor: pointer;
-            animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
 
         @keyframes float1 {
 
@@ -832,10 +851,81 @@
             document.getElementById('artist-card').classList.add('hidden');
             document.getElementById('artist-empty').classList.add('hidden');
             document.getElementById('artist-loading').classList.remove('hidden');
-            document.getElementById('similar-empty').classList.remove('hidden');
+            document.getElementById('similar-empty').classList.add('hidden');
+
+            // Clear both
             document.getElementById('similar-mobile').innerHTML = '';
             document.getElementById('similar-desktop').innerHTML = '';
-        }
+
+            // Show both containers
+            document.getElementById('similar-desktop').style.display = window.innerWidth >= 768 ? 'block' : 'none';
+            document.getElementById('similar-mobile').style.display = window.innerWidth < 768 ? 'grid' : 'none';
+
+                const positions = [{
+                        top: '5%',
+                        left: '15%'
+                    }, {
+                        top: '10%',
+                        left: '50%'
+                    },
+                    {
+                        top: '5%',
+                        left: '75%'
+                    }, {
+                        top: '40%',
+                        left: '10%'
+                    },
+                    {
+                        top: '35%',
+                        left: '40%'
+                    }, {
+                        top: '30%',
+                        left: '70%'
+                    },
+                    {
+                        top: '65%',
+                        left: '20%'
+                    }, {
+                        top: '65%',
+                        left: '55%'
+                    },
+                    {
+                        top: '68%',
+                        left: '80%'
+                    }, {
+                        top: '20%',
+                        left: '85%'
+                    },
+                    {
+                        top: '75%',
+                        left: '35%'
+                    }, {
+                        top: '75%',
+                        left: '65%'
+                    },
+                ];
+                positions.forEach(pos => {
+                    const el = document.createElement('div');
+                    el.className = 'absolute flex flex-col items-center gap-1';
+                    el.style.cssText = `top: ${pos.top}; left: ${pos.left};`;
+                    el.innerHTML = `
+                <div class="skeleton w-14 h-14 rounded-full"></div>
+                <div class="skeleton h-2.5 w-12 rounded-full mt-1"></div>
+            `;
+                    document.getElementById('similar-desktop').appendChild(el);
+                });
+                // Mobile skeletons
+               document.getElementById('similar-mobile').className = 'grid grid-cols-3 gap-6 place-items-center py-4 md:hidden';
+                for (let i = 0; i < 12; i++) {
+                    const el = document.createElement('div');
+                    el.className = 'flex flex-col items-center gap-1';
+                    el.innerHTML = `
+                <div class="skeleton w-14 h-14 rounded-full"></div>
+                <div class="skeleton h-2.5 w-12 rounded-full mt-1"></div>
+            `;
+                    document.getElementById('similar-mobile').appendChild(el);
+                }
+            }
 
         function showEmpty() {
             document.getElementById('artist-loading').classList.add('hidden');
