@@ -187,10 +187,11 @@
                     </div>
 
                     {{-- Loaded artist card --}}
+                    {{-- Loaded artist card --}}
                     <div id="artist-card" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl hidden">
                         <button id="play-button"
-                            class="absolute top-2 end-2 text-body hover:text-heading bg-green-600 box-border border border-transparent cursor-pointer hover:ring-4 hover:ring-green-300 transition-all duration-300 rounded-full mt-5 mr-5 p-1.5 focus:outline-none"
-                            type="button" onclick="openLastFm()">
+                            class="absolute top-2 end-2 bg-green-600 box-border border border-transparent cursor-pointer hover:ring-4 hover:ring-green-300 transition-all duration-300 rounded-full mt-5 mr-5 p-1.5 focus:outline-none"
+                            type="button" title="Preview top track">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-black" viewBox="0 -960 960 960">
                                 <path d="M320-200v-560l440 280-440 280Z" />
                             </svg>
@@ -201,11 +202,26 @@
                             </div>
                             <h5 id="artist-name" class="mb-0.5 text-2xl font-regular tracking-tight text-white text-center px-4"></h5>
                             <span id="artist-tags" class="text-sm text-gray-300 text-center px-4"></span>
+                            <span id="artist-popularity" class="text-xs text-gray-400 mt-0.5"></span>
                             <span id="artist-listeners" class="text-sm text-green-400 font-medium mt-1"></span>
                             <p id="artist-bio" class="text-xs text-gray-400 text-center px-4 mt-2 line-clamp-3"></p>
                             <div class="flex overflow-hidden mt-4 md:mt-6 flex-col w-full">
+                                <a id="deezer-link" href="#" target="_blank"
+                                    class="hidden inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M18.81 11.282H24v1.474h-5.19zm0 3.21H24v1.474h-5.19zm0-6.418H24v1.473h-5.19zM0 17.906h5.19v-1.474H0zm6.462 0h5.19v-1.474h-5.19zm6.463 0h5.19v-1.474h-5.19zm6.462 0H24v-1.474h-5.19zM0 14.492h5.19v-1.474H0zm6.462 0h5.19v-1.474h-5.19zm6.463 0h5.19v-1.474h-5.19zM6.462 11.08h5.19V9.606h-5.19zm6.463 0h5.19V9.606h-5.19z" />
+                                    </svg>
+                                    Listen on Deezer
+                                </a>
+                                <a id="apple-music-link" href="#" target="_blank"
+                                    class="hidden inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.048-2.31-2.1-3.123a5.022 5.022 0 00-1.515-.94c-.938-.332-1.894-.519-2.876-.548C16.67.305 16.076.3 15.482.296H8.518C7.924.3 7.33.305 6.737.323c-.982.029-1.938.216-2.876.548a5.014 5.014 0 00-1.515.94C1.294 2.624.563 3.624.246 4.934a9.23 9.23 0 00-.24 2.19C-.006 7.738 0 8.343 0 8.938v6.124c0 .595.006 1.2.03 1.794a9.23 9.23 0 00.24 2.19c.317 1.31 1.048 2.31 2.1 3.123a5.014 5.014 0 001.515.94c.938.332 1.894.519 2.876.548.593.018 1.187.024 1.781.02h6.964c.594.004 1.188-.002 1.781-.02.982-.029 1.938-.216 2.876-.548a5.014 5.014 0 001.515-.94c1.052-.813 1.783-1.813 2.1-3.123a9.23 9.23 0 00.24-2.19c.024-.594.03-1.199.03-1.794V8.938c0-.595-.006-1.2-.006-1.814zM12 18.404a6.404 6.404 0 110-12.808 6.404 6.404 0 010 12.808zm6.61-11.56a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM12 7.01a4.99 4.99 0 100 9.98A4.99 4.99 0 0012 7.01z" />
+                                    </svg>
+                                    Listen on Apple Music
+                                </a>
                                 <a id="lastfm-link" href="#" target="_blank"
-                                    class="inline-flex justify-center items-center cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-md text-center p-4">
+                                    class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
                                     View on Last.fm
                                 </a>
                             </div>
@@ -312,9 +328,11 @@
     </style>
 
     <script>
-        const LASTFM_API_KEY = '9b63fe91f80052b4d121950664d7df8b'; // <-- replace with your Last.fm API key
+        const LASTFM_API_KEY = '9b63fe91f80052b4d121950664d7df8b';
         const LASTFM_BASE = 'https://ws.audioscrobbler.com/2.0/';
+
         let currentArtistUrl = '#';
+        let audioPlayer = null;
 
         const floatAnims = ['float1', 'float2', 'float3'];
         const desktopPositions = [{
@@ -362,6 +380,26 @@
         ];
         const sizes = ['w-12 h-12', 'w-14 h-14', 'w-16 h-16', 'w-20 h-20'];
 
+        // --- Deezer ---
+        async function searchDeezerArtist(name) {
+            const res = await fetch(`/api/deezer/search?q=${encodeURIComponent(name)}`);
+            const data = await res.json();
+            return data.data?.[0] || null;
+        }
+
+        async function getDeezerTopTrack(artistId) {
+            const res = await fetch(`/api/deezer/top-track?id=${artistId}`);
+            const data = await res.json();
+            return data.data?.find(t => t.preview) || null;
+        }
+
+        async function getDeezerSimilar(artistId) {
+            const res = await fetch(`/api/deezer/similar?id=${artistId}`);
+            const data = await res.json();
+            return data.data || [];
+        }
+
+        // --- Search ---
         function searchArtist(e) {
             e.preventDefault();
             const query = document.getElementById('artist-search').value.trim();
@@ -371,23 +409,37 @@
 
         async function loadArtist(name) {
             showLoading();
+            stopAudio();
 
             try {
-                const [infoRes, similarRes] = await Promise.all([
+                const [infoRes, deezerArtist] = await Promise.all([
                     fetch(`${LASTFM_BASE}?method=artist.getinfo&artist=${encodeURIComponent(name)}&api_key=${LASTFM_API_KEY}&format=json`),
-                    fetch(`${LASTFM_BASE}?method=artist.getsimilar&artist=${encodeURIComponent(name)}&limit=12&api_key=${LASTFM_API_KEY}&format=json`)
+                    searchDeezerArtist(name)
                 ]);
 
                 const infoData = await infoRes.json();
-                const similarData = await similarRes.json();
-
                 if (infoData.error) {
                     showEmpty();
                     return;
                 }
 
-                renderArtistCard(infoData.artist);
-                renderSimilarArtists(similarData.similarartists?.artist || []);
+                // Get similar artists from Deezer if we have an ID
+                let similarArtists = [];
+                if (deezerArtist?.id) {
+                    similarArtists = await getDeezerSimilar(deezerArtist.id);
+                } else {
+                    // Fallback to Last.fm similar
+                    const similarRes = await fetch(`${LASTFM_BASE}?method=artist.getsimilar&artist=${encodeURIComponent(name)}&limit=12&api_key=${LASTFM_API_KEY}&format=json`);
+                    const similarData = await similarRes.json();
+                    similarArtists = (similarData.similarartists?.artist || []).map(a => ({
+                        name: a.name,
+                        id: null,
+                        picture_medium: null
+                    }));
+                }
+
+                await renderArtistCard(infoData.artist, deezerArtist);
+                await renderSimilarArtists(similarArtists, !!deezerArtist?.id);
 
             } catch (err) {
                 console.error(err);
@@ -395,33 +447,121 @@
             }
         }
 
-        function renderArtistCard(artist) {
-            // Image — Last.fm images can be empty, fallback to placeholder
-            const images = artist.image || [];
-            const imgUrl = images.find(i => i.size === 'extralarge')?.['#text'] ||
-                images.find(i => i.size === 'large')?.['#text'] ||
+        async function renderArtistCard(artist, deezerArtist) {
+            // Image from Deezer (high quality)
+            const imgUrl = deezerArtist?.picture_xl ||
+                deezerArtist?.picture_big ||
+                deezerArtist?.picture_medium ||
                 'https://i.pravatar.cc/96?img=1';
 
+            // Tags from Last.fm
             const tags = artist.tags?.tag?.slice(0, 3).map(t => t.name).join(' | ') || '';
+
+            // Listeners from Last.fm
             const listeners = artist.stats?.listeners ?
                 parseInt(artist.stats.listeners).toLocaleString() + ' monthly listeners' :
                 '';
+
+            // Fans from Deezer as world rank approximation
+            const fans = deezerArtist?.nb_fan ?
+                parseInt(deezerArtist.nb_fan).toLocaleString() + ' fans on Deezer' :
+                '';
+
+            // Bio from Last.fm
             const bio = artist.bio?.summary?.replace(/<a[^>]*>.*?<\/a>/g, '').trim() || '';
 
-            document.getElementById('artist-image').src = imgUrl || 'https://i.pravatar.cc/96?img=1';
+            // Links
+            const deezerUrl = deezerArtist?.link || null;
+            const appleMusicUrl = `https://music.apple.com/search?term=${encodeURIComponent(artist.name)}`;
+
+            // Preview track from Deezer
+            let previewUrl = null;
+            let trackName = null;
+            if (deezerArtist?.id) {
+                const topTrack = await getDeezerTopTrack(deezerArtist.id);
+                previewUrl = topTrack?.preview || null;
+                trackName = topTrack?.title || null;
+            }
+
+            // Render
+            document.getElementById('artist-image').src = imgUrl;
             document.getElementById('artist-name').textContent = artist.name;
             document.getElementById('artist-tags').textContent = tags;
             document.getElementById('artist-listeners').textContent = listeners;
+            document.getElementById('artist-popularity').textContent = fans;
             document.getElementById('artist-bio').textContent = bio;
+            currentArtistUrl = deezerUrl || artist.url || '#';
+
+            // Deezer link
+            const deezerBtn = document.getElementById('deezer-link');
+            if (deezerUrl) {
+                deezerBtn.href = deezerUrl;
+                deezerBtn.classList.remove('hidden');
+            } else {
+                deezerBtn.classList.add('hidden');
+            }
+
+            // Apple Music link
+            document.getElementById('apple-music-link').href = appleMusicUrl;
+            document.getElementById('apple-music-link').classList.remove('hidden');
+
+            // Last.fm link
             document.getElementById('lastfm-link').href = artist.url || '#';
-            currentArtistUrl = artist.url || '#';
+
+            // Play button
+            const playBtn = document.getElementById('play-button');
+            if (previewUrl) {
+                playBtn.onclick = () => toggleAudio(previewUrl, trackName);
+                playBtn.classList.remove('opacity-30', 'cursor-not-allowed');
+                playBtn.title = `Preview: ${trackName}`;
+            } else {
+                playBtn.onclick = null;
+                playBtn.classList.add('opacity-30', 'cursor-not-allowed');
+                playBtn.title = 'No preview available';
+            }
 
             document.getElementById('artist-loading').classList.add('hidden');
             document.getElementById('artist-empty').classList.add('hidden');
             document.getElementById('artist-card').classList.remove('hidden');
         }
 
-        async function renderSimilarArtists(artists) {
+        // --- Audio ---
+        function toggleAudio(url, trackName) {
+            if (audioPlayer && !audioPlayer.paused) {
+                stopAudio();
+                return;
+            }
+            if (audioPlayer) audioPlayer.pause();
+            audioPlayer = new Audio(url);
+            audioPlayer.volume = 0.7;
+            audioPlayer.play();
+
+            document.getElementById('play-button').innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-black" viewBox="0 -960 960 960">
+                <path d="M560-200v-560h160v560H560Zm-320 0v-560h160v560H240Z"/>
+            </svg>`;
+
+            audioPlayer.onended = () => resetPlayButton();
+        }
+
+        function stopAudio() {
+            if (audioPlayer) {
+                audioPlayer.pause();
+                audioPlayer = null;
+            }
+            resetPlayButton();
+        }
+
+        function resetPlayButton() {
+            const btn = document.getElementById('play-button');
+            if (btn) btn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-black" viewBox="0 -960 960 960">
+                <path d="M320-200v-560l440 280-440 280Z"/>
+            </svg>`;
+        }
+
+        // --- Similar Artists ---
+        async function renderSimilarArtists(artists, isDeezer = true) {
             const mobileContainer = document.getElementById('similar-mobile');
             const desktopContainer = document.getElementById('similar-desktop');
             const emptyState = document.getElementById('similar-empty');
@@ -448,39 +588,37 @@
                 };
                 const size = sizes[i % sizes.length];
 
-                // Fetch artist image
-                let imgUrl = `https://i.pravatar.cc/64?img=${10 + i}`;
-                try {
-                    const r = await fetch(`${LASTFM_BASE}?method=artist.getinfo&artist=${encodeURIComponent(a.name)}&api_key=${LASTFM_API_KEY}&format=json`);
-                    const d = await r.json();
-                    const imgs = d.artist?.image || [];
-                    const fetched = imgs.find(x => x.size === 'large')?.['#text'];
-                    if (fetched) imgUrl = fetched;
-                } catch (_) {}
+                // Image — Deezer provides it directly, or fallback
+                let imgUrl = a.picture_medium || a.picture || `https://i.pravatar.cc/64?img=${10 + i}`;
 
-                // Mobile bubble
-                const mobileBubble = document.createElement('div');
-                mobileBubble.className = 'artist-float flex flex-col items-center gap-1';
-                mobileBubble.style.animation = `${anim} ${dur}s ease-in-out infinite ${delay}s`;
-                mobileBubble.innerHTML = `
-                <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                    <img src="${imgUrl}" class="w-full h-full object-cover" alt="${a.name}" onerror="this.src='https://i.pravatar.cc/56?img=${10+i}'"/>
-                </div>
-                <span class="text-white text-xs font-medium text-center">${a.name}</span>
-            `;
-                mobileBubble.addEventListener('click', () => loadArtist(a.name));
-                mobileContainer.appendChild(mobileBubble);
+                // If it came from Last.fm fallback, fetch from Deezer
+                if (!isDeezer && a.name) {
+                    try {
+                        const sp = await searchDeezerArtist(a.name);
+                        if (sp?.picture_medium) imgUrl = sp.picture_medium;
+                    } catch (_) {}
+                }
 
-                // Desktop bubble
-                const desktopBubble = document.createElement('div');
-                desktopBubble.className = 'artist-float absolute flex flex-col items-center gap-1';
-                desktopBubble.style.cssText = `top: ${pos.top}; left: ${pos.left}; animation: ${anim} ${dur}s ease-in-out infinite ${delay}s;`;
-                desktopBubble.innerHTML = `
+                const bubbleHTML = `
                 <div class="${size} rounded-full border border-white/20 overflow-hidden bg-gray-800">
                     <img src="${imgUrl}" class="w-full h-full object-cover rounded-full" alt="${a.name}" onerror="this.src='https://i.pravatar.cc/56?img=${10+i}'"/>
                 </div>
-                <span class="text-white text-xs font-medium">${a.name}</span>
+                <span class="text-white text-xs font-medium text-center">${a.name}</span>
             `;
+
+                // Mobile
+                const mobileBubble = document.createElement('div');
+                mobileBubble.className = 'artist-float flex flex-col items-center gap-1';
+                mobileBubble.style.animation = `${anim} ${dur}s ease-in-out infinite ${delay}s`;
+                mobileBubble.innerHTML = bubbleHTML;
+                mobileBubble.addEventListener('click', () => loadArtist(a.name));
+                mobileContainer.appendChild(mobileBubble);
+
+                // Desktop
+                const desktopBubble = document.createElement('div');
+                desktopBubble.className = 'artist-float absolute flex flex-col items-center gap-1';
+                desktopBubble.style.cssText = `top: ${pos.top}; left: ${pos.left}; animation: ${anim} ${dur}s ease-in-out infinite ${delay}s;`;
+                desktopBubble.innerHTML = bubbleHTML;
                 desktopBubble.addEventListener('click', () => loadArtist(a.name));
                 desktopContainer.appendChild(desktopBubble);
             }
@@ -501,10 +639,6 @@
             document.getElementById('artist-loading').classList.add('hidden');
             document.getElementById('artist-card').classList.add('hidden');
             document.getElementById('artist-empty').classList.remove('hidden');
-        }
-
-        function openLastFm() {
-            window.open(currentArtistUrl, '_blank');
         }
     </script>
 
