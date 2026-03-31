@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-[#000A04]">
+<body class="bg-black">
     <!-- NAVIGATION -->
     <nav class="fixed w-full z-50 py-3 top-0 start-0 border-b border-white/5"
         style="background: rgba(0,0,0,0.75); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
@@ -110,7 +110,7 @@
         </div>
     </nav>
     <!-- JUMBOTRON -->
-    <section class="bg-[#000A04] mt-30 relative overflow-hidden pb-10 md:pb-15">
+    <section style="background: linear-gradient(to top, #000A04, #000000);" class=" mt-30 relative overflow-hidden pb-10 md:pb-15">
         <div class="py-8 px-4 mx-auto max-w-screen-2xl text-center lg:py-16">
             <h1 class="mb-6 text-4xl font-medium tracking-tighter text-white md:text-5xl lg:text-6xl">Disover New Artists <br>With Just a Click</h1>
             <p class="mb-8 text-base font-normal text-gray-300 md:text-xl">Here at Flowbite we focus on markets where technology, innovation, <br> and capital can unlock long-term value and drive economic growth.</p>
@@ -147,258 +147,254 @@
     </section>
     <!-- ARTISTS -->
     <section class="w-full flex items-center justify-center">
-        <div class="w-full rounded-lg py-20 bg-[#000A04] max-w-7xl relative overflow-hidden">
+        <div class="w-full flex items-center justify-center rounded-lg py-20 relative overflow-hidden" style="background: linear-gradient(to bottom, #000A04, #000000);">
+            <div class="w-full max-w-screen-xl">
+                {{-- Top border --}}
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 h-0.5 w-full bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
 
-            {{-- Top border --}}
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 h-0.5 w-full bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+                {{-- Top glow --}}
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-30 pointer-events-none"
+                    style="background: radial-gradient(ellipse at top, rgba(200,255,220,0.35) 0%, rgba(16,185,80,0.2) 30%, rgba(16,185,80,0.06) 60%, transparent 75%); filter: blur(20px);">
+                </div>
 
-            {{-- Top glow --}}
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-30 pointer-events-none"
-                style="background: radial-gradient(ellipse at top, rgba(200,255,220,0.35) 0%, rgba(16,185,80,0.2) 30%, rgba(16,185,80,0.06) 60%, transparent 75%); filter: blur(20px);">
-            </div>
+                {{-- Main content --}}
+                <div class="relative flex mt-5 md:mt-25  flex-col md:flex-row items-start gap-8 px-8">
 
-            {{-- Main content --}}
-            <div class="relative flex mt-5 md:mt-25  flex-col md:flex-row items-start gap-8 px-8">
+                    {{-- Left: Artist Card --}}
+                    <div class="flex-shrink-0 w-full max-w-[300px] mx-auto md:mx-0">
 
-                {{-- Left: Artist Card --}}
-                <div class="flex-shrink-0 w-full max-w-[300px] mx-auto md:mx-0">
-
-                    {{-- Empty state - hidden by default --}}
-                    <div id="artist-empty" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl p-8 flex-col items-center justify-center min-h-[300px] hidden">
-                        <svg class="w-12 h-12 text-gray-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-                        </svg>
-                        <p class="text-gray-500 text-sm text-center">Search for an artist to see their info</p>
-                    </div>
-
-                    {{-- Loaded artist card - visible by default with Drake --}}
-                    <div id="artist-card" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl">
-                        <button id="play-button"
-                            class="absolute top-2 end-2 bg-green-600 box-border border border-transparent cursor-pointer hover:ring-4 hover:ring-green-300 transition-all duration-300 rounded-full mt-5 mr-5 p-1.5 focus:outline-none"
-                            type="button" title="Preview top track">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-black" viewBox="0 -960 960 960">
-                                <path d="M320-200v-560l440 280-440 280Z" />
+                        {{-- Empty state - hidden by default --}}
+                        <div id="artist-empty" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl p-8 flex-col items-center justify-center min-h-[300px] hidden">
+                            <svg class="w-12 h-12 text-gray-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                             </svg>
-                        </button>
-                        <div class="flex flex-col gap-1 items-center">
-                            <div class="w-24 h-24 mb-4 mt-5 rounded-full overflow-hidden border-2 border-green-500 bg-gray-800">
-                                <img id="artist-image"
-                                    src="https://cdn-images.dzcdn.net/images/artist/5d2fa7f140a6bdc2c864c3465a61fc71/500x500-000000-80-0-0.jpg"
-                                    class="w-full h-full object-cover" alt="artist" />
-                            </div>
-                            <h5 id="artist-name" class="mb-0.5 text-2xl font-regular tracking-tight text-white text-center px-4">Drake</h5>
-                            <span id="artist-tags" class="text-sm text-gray-300 text-center px-4">Hip-Hop | Rap | Pop</span>
-                            <span id="artist-popularity" class="text-xs text-gray-400 mt-0.5">23,906,313 fans on Deezer</span>
-                            <span id="artist-listeners" class="text-sm text-green-400 font-medium mt-1">55,441,858 monthly listeners</span>
-                            <p id="artist-bio" class="text-xs text-gray-400 text-center px-4 mt-2 line-clamp-3">Aubrey Drake Graham is a Canadian rapper, singer, songwriter, and actor. He is one of the world's best-selling music artists with over 170 million records sold worldwide.</p>
-                            <div class="flex overflow-hidden mt-4 md:mt-6 flex-col w-full">
-                                <a id="deezer-link" href="https://www.deezer.com/artist/246791" target="_blank"
-                                    class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
-                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M18.81 11.282H24v1.474h-5.19zm0 3.21H24v1.474h-5.19zm0-6.418H24v1.473h-5.19zM0 17.906h5.19v-1.474H0zm6.462 0h5.19v-1.474h-5.19zm6.463 0h5.19v-1.474h-5.19zm6.462 0H24v-1.474h-5.19zM0 14.492h5.19v-1.474H0zm6.462 0h5.19v-1.474h-5.19zm6.463 0h5.19v-1.474h-5.19zM6.462 11.08h5.19V9.606h-5.19zm6.463 0h5.19V9.606h-5.19z" />
-                                    </svg>
-                                    Listen on Deezer
-                                </a>
-                                <a id="apple-music-link" href="https://music.apple.com/search?term=Drake" target="_blank"
-                                    class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
-                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.048-2.31-2.1-3.123a5.022 5.022 0 00-1.515-.94c-.938-.332-1.894-.519-2.876-.548C16.67.305 16.076.3 15.482.296H8.518C7.924.3 7.33.305 6.737.323c-.982.029-1.938.216-2.876.548a5.014 5.014 0 00-1.515.94C1.294 2.624.563 3.624.246 4.934a9.23 9.23 0 00-.24 2.19C-.006 7.738 0 8.343 0 8.938v6.124c0 .595.006 1.2.03 1.794a9.23 9.23 0 00.24 2.19c.317 1.31 1.048 2.31 2.1 3.123a5.014 5.014 0 001.515.94c.938.332 1.894.519 2.876.548.593.018 1.187.024 1.781.02h6.964c.594.004 1.188-.002 1.781-.02.982-.029 1.938-.216 2.876-.548a5.014 5.014 0 001.515-.94c1.052-.813 1.783-1.813 2.1-3.123a9.23 9.23 0 00.24-2.19c.024-.594.03-1.199.03-1.794V8.938c0-.595-.006-1.2-.006-1.814zM12 18.404a6.404 6.404 0 110-12.808 6.404 6.404 0 010 12.808zm6.61-11.56a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM12 7.01a4.99 4.99 0 100 9.98A4.99 4.99 0 0012 7.01z" />
-                                    </svg>
-                                    Listen on Apple Music
-                                </a>
-                                <a id="lastfm-link" href="https://www.last.fm/music/Drake" target="_blank"
-                                    class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
-                                    View on Last.fm
-                                </a>
+                            <p class="text-gray-500 text-sm text-center">Search for an artist to see their info</p>
+                        </div>
+
+                        {{-- Loaded artist card - visible by default with Drake --}}
+                        <div id="artist-card" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl">
+                            <button id="play-button"
+                                class="absolute top-2 end-2 bg-green-600 box-border border border-transparent cursor-pointer hover:ring-4 hover:ring-green-300 transition-all duration-300 rounded-full mt-5 mr-5 p-1.5 focus:outline-none"
+                                type="button" title="Preview top track">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-black" viewBox="0 -960 960 960">
+                                    <path d="M320-200v-560l440 280-440 280Z" />
+                                </svg>
+                            </button>
+                            <div class="flex flex-col gap-1 items-center">
+                                <div class="w-24 h-24 mb-4 mt-5 rounded-full overflow-hidden border-2 border-green-500 bg-gray-800">
+                                    <img id="artist-image"
+                                        src="https://cdn-images.dzcdn.net/images/artist/5d2fa7f140a6bdc2c864c3465a61fc71/500x500-000000-80-0-0.jpg"
+                                        class="w-full h-full object-cover" alt="artist" />
+                                </div>
+                                <h5 id="artist-name" class="mb-0.5 text-2xl font-regular tracking-tight text-white text-center px-4">Drake</h5>
+                                <span id="artist-tags" class="text-sm text-gray-300 text-center px-4">Hip-Hop | Rap | Pop</span>
+                                <span id="artist-popularity" class="text-xs text-gray-400 mt-0.5">23,906,313 fans on Deezer</span>
+                                <span id="artist-listeners" class="text-sm text-green-400 font-medium mt-1">55,441,858 monthly listeners</span>
+                                <p id="artist-bio" class="text-xs text-gray-400 text-center px-4 mt-2 line-clamp-3">Aubrey Drake Graham is a Canadian rapper, singer, songwriter, and actor. He is one of the world's best-selling music artists with over 170 million records sold worldwide.</p>
+                                <div class="flex overflow-hidden mt-4 md:mt-6 flex-col w-full">
+                                    <a id="deezer-link" href="https://www.deezer.com/artist/246791" target="_blank"
+                                        class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
+                                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M18.81 11.282H24v1.474h-5.19zm0 3.21H24v1.474h-5.19zm0-6.418H24v1.473h-5.19zM0 17.906h5.19v-1.474H0zm6.462 0h5.19v-1.474h-5.19zm6.463 0h5.19v-1.474h-5.19zm6.462 0H24v-1.474h-5.19zM0 14.492h5.19v-1.474H0zm6.462 0h5.19v-1.474h-5.19zm6.463 0h5.19v-1.474h-5.19zM6.462 11.08h5.19V9.606h-5.19zm6.463 0h5.19V9.606h-5.19z" />
+                                        </svg>
+                                        Listen on Deezer
+                                    </a>
+                                    <a id="apple-music-link" href="https://music.apple.com/search?term=Drake" target="_blank"
+                                        class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
+                                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.048-2.31-2.1-3.123a5.022 5.022 0 00-1.515-.94c-.938-.332-1.894-.519-2.876-.548C16.67.305 16.076.3 15.482.296H8.518C7.924.3 7.33.305 6.737.323c-.982.029-1.938.216-2.876.548a5.014 5.014 0 00-1.515.94C1.294 2.624.563 3.624.246 4.934a9.23 9.23 0 00-.24 2.19C-.006 7.738 0 8.343 0 8.938v6.124c0 .595.006 1.2.03 1.794a9.23 9.23 0 00.24 2.19c.317 1.31 1.048 2.31 2.1 3.123a5.014 5.014 0 001.515.94c.938.332 1.894.519 2.876.548.593.018 1.187.024 1.781.02h6.964c.594.004 1.188-.002 1.781-.02.982-.029 1.938-.216 2.876-.548a5.014 5.014 0 001.515-.94c1.052-.813 1.783-1.813 2.1-3.123a9.23 9.23 0 00.24-2.19c.024-.594.03-1.199.03-1.794V8.938c0-.595-.006-1.2-.006-1.814zM12 18.404a6.404 6.404 0 110-12.808 6.404 6.404 0 010 12.808zm6.61-11.56a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM12 7.01a4.99 4.99 0 100 9.98A4.99 4.99 0 0012 7.01z" />
+                                        </svg>
+                                        Listen on Apple Music
+                                    </a>
+                                    <a id="lastfm-link" href="https://www.last.fm/music/Drake" target="_blank"
+                                        class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
+                                        View on Last.fm
+                                    </a>
+                                </div>
                             </div>
                         </div>
+
+                        {{-- Loading state --}}
+                        <div id="artist-loading" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl hidden p-5">
+                            <div class="flex justify-center mt-5 mb-4">
+                                <div class="w-24 h-24 rounded-full skeleton"></div>
+                            </div>
+                            <div class="skeleton h-5 w-3/4 mx-auto rounded-full mb-2"></div>
+                            <div class="skeleton h-3 w-2/3 mx-auto rounded-full mb-1"></div>
+                            <div class="skeleton h-3 w-1/2 mx-auto rounded-full mb-4"></div>
+                            <div class="skeleton h-2.5 w-full rounded-full mb-1.5"></div>
+                            <div class="skeleton h-2.5 w-5/6 rounded-full mb-1.5"></div>
+                            <div class="skeleton h-2.5 w-4/6 rounded-full mb-6"></div>
+                            <div class="skeleton h-10 w-full rounded-none mb-0"></div>
+                            <div class="skeleton h-10 w-full rounded-none"></div>
+                        </div>
+
                     </div>
 
-                    {{-- Loading state --}}
-                    <div id="artist-loading" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl hidden p-5">
-                        <div class="flex justify-center mt-5 mb-4">
-                            <div class="w-24 h-24 rounded-full skeleton"></div>
+                    {{-- Right: Similar Artists --}}
+                    <div class="relative flex-1 w-full">
+
+                        {{-- Empty state - hidden by default --}}
+                        <div id="similar-empty" class="hidden items-center justify-center h-[300px] md:h-[400px]">
+                            <p class="text-gray-600 text-sm">Similar artists will appear here</p>
                         </div>
-                        <div class="skeleton h-5 w-3/4 mx-auto rounded-full mb-2"></div>
-                        <div class="skeleton h-3 w-2/3 mx-auto rounded-full mb-1"></div>
-                        <div class="skeleton h-3 w-1/2 mx-auto rounded-full mb-4"></div>
-                        <div class="skeleton h-2.5 w-full rounded-full mb-1.5"></div>
-                        <div class="skeleton h-2.5 w-5/6 rounded-full mb-1.5"></div>
-                        <div class="skeleton h-2.5 w-4/6 rounded-full mb-6"></div>
-                        <div class="skeleton h-10 w-full rounded-none mb-0"></div>
-                        <div class="skeleton h-10 w-full rounded-none"></div>
+
+                        {{-- Mobile grid - visible by default with Drake's similar artists --}}
+                        <div id="similar-mobile" class="grid grid-cols-3 gap-6 place-items-center md:hidden py-4">
+                            <div onclick="loadArtist('The Weeknd')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float1 6s ease-in-out infinite;">
+                                <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/theweeknd.jpg" class="w-full h-full object-cover rounded-full" alt="The Weeknd" />
+                                </div>
+                                <span class="text-white text-xs font-medium">The Weeknd</span>
+                            </div>
+                            <div onclick="loadArtist('Kendrick Lamar')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float2 7s ease-in-out infinite 0.3s;">
+                                <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/kendricklamar.jpg" class="w-full h-full object-cover rounded-full" alt="Kendrick Lamar" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Kendrick Lamar</span>
+                            </div>
+                            <div onclick="loadArtist('J. Cole')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float3 5.5s ease-in-out infinite 0.6s;">
+                                <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/jcole.jpg" class="w-full h-full object-cover rounded-full" alt="J. Cole" />
+                                </div>
+                                <span class="text-white text-xs font-medium">J. Cole</span>
+                            </div>
+                            <div onclick="loadArtist('Future')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float1 8s ease-in-out infinite 1s;">
+                                <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/future.jpg" class="w-full h-full object-cover rounded-full" alt="Future" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Future</span>
+                            </div>
+                            <div onclick="loadArtist('Travis Scott')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float2 6.5s ease-in-out infinite 0.5s;">
+                                <div class="w-18 h-18 rounded-full border-2 border-green-500/60 overflow-hidden bg-gray-800">
+                                    <img src="/artists/travisscott.jpg" class="w-full h-full object-cover rounded-full" alt="Travis Scott" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Travis Scott</span>
+                            </div>
+                            <div onclick="loadArtist('21 Savage')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float3 7.5s ease-in-out infinite 1.5s;">
+                                <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/21savage.jpg" class="w-full h-full object-cover rounded-full" alt="21 Savage" />
+                                </div>
+                                <span class="text-white text-xs font-medium">21 Savage</span>
+                            </div>
+                            <div onclick="loadArtist('Lil Baby')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float1 7s ease-in-out infinite 2s;">
+                                <div class="w-20 h-20 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/lilbaby.jpg" class="w-full h-full object-cover rounded-full" alt="Lil Baby" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Lil Baby</span>
+                            </div>
+                            <div onclick="loadArtist('Gunna')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float2 6s ease-in-out infinite 0.8s;">
+                                <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/gunna.jpg" class="w-full h-full object-cover rounded-full" alt="Gunna" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Gunna</span>
+                            </div>
+                            <div onclick="loadArtist('Young Thug')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float3 5s ease-in-out infinite 1.2s;">
+                                <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/youngthug.jpg" class="w-full h-full object-cover rounded-full" alt="Young Thug" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Young Thug</span>
+                            </div>
+                            <div onclick="loadArtist('Eminem')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float1 8s ease-in-out infinite 0.4s;">
+                                <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/eminem.jpg" class="w-full h-full object-cover rounded-full" alt="Eminem" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Eminem</span>
+                            </div>
+                            <div onclick="loadArtist('Jay-Z')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float2 6.5s ease-in-out infinite 1.8s;">
+                                <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/jayz.jpg" class="w-full h-full object-cover rounded-full" alt="Jay-Z" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Jay-Z</span>
+                            </div>
+                            <div onclick="loadArtist('Nicki Minaj')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float3 7s ease-in-out infinite 0.9s;">
+                                <div class="w-19 h-19 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/nickiminaj.jpg" class="w-full h-full object-cover rounded-full" alt="Nicki Minaj" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Nicki Minaj</span>
+                            </div>
+                        </div>
+
+                        {{-- Desktop absolute - visible by default with Drake's similar artists --}}
+                        <div id="similar-desktop" class="hidden md:block relative h-[400px]">
+                            <div onclick="loadArtist('The Weeknd')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 5%; left: 15%; animation: float1 6s ease-in-out infinite;">
+                                <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/theweeknd.jpg" class="w-full h-full object-cover rounded-full" alt="The Weeknd" onerror="this.src='https://i.pravatar.cc/56?img=11'" />
+                                </div>
+                                <span class="text-white text-xs font-medium">The Weeknd</span>
+                            </div>
+                            <div onclick="loadArtist('Kendrick Lamar')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 10%; left: 50%; animation: float2 7s ease-in-out infinite 0.3s;">
+                                <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/kendricklamar.jpg" class="w-full h-full object-cover rounded-full" alt="Kendrick Lamar" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Kendrick Lamar</span>
+                            </div>
+                            <div onclick="loadArtist('J. Cole')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 5%; left: 75%; animation: float3 5.5s ease-in-out infinite 0.6s;">
+                                <div class="w-17 h-17 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/jcole.jpg" class="w-full h-full object-cover rounded-full" alt="J. Cole" />
+                                </div>
+                                <span class="text-white text-xs font-medium">J. Cole</span>
+                            </div>
+                            <div onclick="loadArtist('Future')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 40%; left: 10%; animation: float2 8s ease-in-out infinite 1s;">
+                                <div class="w-16 h-16 rounded-full border border-green-500/40 overflow-hidden bg-gray-800">
+                                    <img src="/artists/future.jpg" class="w-full h-full object-cover rounded-full" alt="Future" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Future</span>
+                            </div>
+                            <div onclick="loadArtist('Travis Scott')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 35%; left: 40%; animation: float1 6.5s ease-in-out infinite 0.5s;">
+                                <div class="w-20 h-20 rounded-full border-2 border-green-500/60 overflow-hidden bg-gray-800">
+                                    <img src="/artists/travisscott.jpg" class="w-full h-full object-cover rounded-full" alt="Travis Scott" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Travis Scott</span>
+                            </div>
+                            <div onclick="loadArtist('21 Savage')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 30%; left: 70%; animation: float3 7.5s ease-in-out infinite 1.5s;">
+                                <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/21savage.jpg" class="w-full h-full object-cover rounded-full" alt="21 Savage" />
+                                </div>
+                                <span class="text-white text-xs font-medium">21 Savage</span>
+                            </div>
+                            <div onclick="loadArtist('Lil Baby')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 65%; left: 20%; animation: float1 7s ease-in-out infinite 2s;">
+                                <div class="w-12 h-12 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/lilbaby.jpg" class="w-full h-full object-cover rounded-full" alt="Lil Baby" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Lil Baby</span>
+                            </div>
+                            <div onclick="loadArtist('Gunna')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 65%; left: 55%; animation: float2 6s ease-in-out infinite 0.8s;">
+                                <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/gunna.jpg" class="w-full h-full object-cover rounded-full" alt="Gunna" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Gunna</span>
+                            </div>
+                            <div onclick="loadArtist('Young Thug')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 68%; left: 80%; animation: float3 5s ease-in-out infinite 1.2s;">
+                                <div class="w-12 h-12 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/youngthug.jpg" class="w-full h-full object-cover rounded-full" alt="Young Thug" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Young Thug</span>
+                            </div>
+                            <div onclick="loadArtist('Eminem')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 20%; left: 85%; animation: float1 8s ease-in-out infinite 0.4s;">
+                                <div class="w-18 h-18 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/eminem.jpg" class="w-full h-full object-cover rounded-full" alt="Eminem" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Eminem</span>
+                            </div>
+                            <div onclick="loadArtist('Jay-Z')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 75%; left: 35%; animation: float2 6.5s ease-in-out infinite 1.8s;">
+                                <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/jayz.jpg" class="w-full h-full object-cover rounded-full" alt="Jay-Z" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Jay-Z</span>
+                            </div>
+                            <div onclick="loadArtist('Nicki Minaj')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 75%; left: 65%; animation: float3 7s ease-in-out infinite 0.9s;">
+                                <div class="w-15 h-15 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                    <img src="/artists/nickiminaj.jpg" class="w-full h-full object-cover rounded-full" alt="Nicki Minaj" />
+                                </div>
+                                <span class="text-white text-xs font-medium">Nicki Minaj</span>
+                            </div>
+                        </div>
+
                     </div>
-
-                </div>
-
-                {{-- Right: Similar Artists --}}
-                <div class="relative flex-1 w-full">
-
-                    {{-- Empty state - hidden by default --}}
-                    <div id="similar-empty" class="hidden items-center justify-center h-[300px] md:h-[400px]">
-                        <p class="text-gray-600 text-sm">Similar artists will appear here</p>
-                    </div>
-
-                    {{-- Mobile grid - visible by default with Drake's similar artists --}}
-                    <div id="similar-mobile" class="grid grid-cols-3 gap-6 place-items-center md:hidden py-4">
-                        <div onclick="loadArtist('The Weeknd')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float1 6s ease-in-out infinite;">
-                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/theweeknd.jpg" class="w-full h-full object-cover rounded-full" alt="The Weeknd" />
-                            </div>
-                            <span class="text-white text-xs font-medium">The Weeknd</span>
-                        </div>
-                        <div onclick="loadArtist('Kendrick Lamar')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float2 7s ease-in-out infinite 0.3s;">
-                            <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/kendricklamar.jpg" class="w-full h-full object-cover rounded-full" alt="Kendrick Lamar" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Kendrick Lamar</span>
-                        </div>
-                        <div onclick="loadArtist('J. Cole')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float3 5.5s ease-in-out infinite 0.6s;">
-                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/jcole.jpg" class="w-full h-full object-cover rounded-full" alt="J. Cole" />
-                            </div>
-                            <span class="text-white text-xs font-medium">J. Cole</span>
-                        </div>
-                        <div onclick="loadArtist('Future')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float1 8s ease-in-out infinite 1s;">
-                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/future.jpg" class="w-full h-full object-cover rounded-full" alt="Future" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Future</span>
-                        </div>
-                        <div onclick="loadArtist('Travis Scott')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float2 6.5s ease-in-out infinite 0.5s;">
-                            <div class="w-18 h-18 rounded-full border-2 border-green-500/60 overflow-hidden bg-gray-800">
-                                <img src="/artists/travisscott.jpg" class="w-full h-full object-cover rounded-full" alt="Travis Scott" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Travis Scott</span>
-                        </div>
-                        <div onclick="loadArtist('21 Savage')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float3 7.5s ease-in-out infinite 1.5s;">
-                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/21savage.jpg" class="w-full h-full object-cover rounded-full" alt="21 Savage" />
-                            </div>
-                            <span class="text-white text-xs font-medium">21 Savage</span>
-                        </div>
-                        <div onclick="loadArtist('Lil Baby')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float1 7s ease-in-out infinite 2s;">
-                            <div class="w-20 h-20 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/lilbaby.jpg" class="w-full h-full object-cover rounded-full" alt="Lil Baby" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Lil Baby</span>
-                        </div>
-                        <div onclick="loadArtist('Gunna')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float2 6s ease-in-out infinite 0.8s;">
-                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/gunna.jpg" class="w-full h-full object-cover rounded-full" alt="Gunna" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Gunna</span>
-                        </div>
-                        <div onclick="loadArtist('Young Thug')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float3 5s ease-in-out infinite 1.2s;">
-                            <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/youngthug.jpg" class="w-full h-full object-cover rounded-full" alt="Young Thug" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Young Thug</span>
-                        </div>
-                        <div onclick="loadArtist('Eminem')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float1 8s ease-in-out infinite 0.4s;">
-                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/eminem.jpg" class="w-full h-full object-cover rounded-full" alt="Eminem" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Eminem</span>
-                        </div>
-                        <div onclick="loadArtist('Jay-Z')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float2 6.5s ease-in-out infinite 1.8s;">
-                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/jayz.jpg" class="w-full h-full object-cover rounded-full" alt="Jay-Z" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Jay-Z</span>
-                        </div>
-                        <div onclick="loadArtist('Nicki Minaj')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float3 7s ease-in-out infinite 0.9s;">
-                            <div class="w-19 h-19 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/nickiminaj.jpg" class="w-full h-full object-cover rounded-full" alt="Nicki Minaj" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Nicki Minaj</span>
-                        </div>
-                    </div>
-
-                    {{-- Desktop absolute - visible by default with Drake's similar artists --}}
-                    <div id="similar-desktop" class="hidden md:block relative h-[400px]">
-                        <div onclick="loadArtist('The Weeknd')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 5%; left: 15%; animation: float1 6s ease-in-out infinite;">
-                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/theweeknd.jpg" class="w-full h-full object-cover rounded-full" alt="The Weeknd" onerror="this.src='https://i.pravatar.cc/56?img=11'" />
-                            </div>
-                            <span class="text-white text-xs font-medium">The Weeknd</span>
-                        </div>
-                        <div onclick="loadArtist('Kendrick Lamar')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 10%; left: 50%; animation: float2 7s ease-in-out infinite 0.3s;">
-                            <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/kendricklamar.jpg" class="w-full h-full object-cover rounded-full" alt="Kendrick Lamar" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Kendrick Lamar</span>
-                        </div>
-                        <div onclick="loadArtist('J. Cole')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 5%; left: 75%; animation: float3 5.5s ease-in-out infinite 0.6s;">
-                            <div class="w-17 h-17 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/jcole.jpg" class="w-full h-full object-cover rounded-full" alt="J. Cole" />
-                            </div>
-                            <span class="text-white text-xs font-medium">J. Cole</span>
-                        </div>
-                        <div onclick="loadArtist('Future')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 40%; left: 10%; animation: float2 8s ease-in-out infinite 1s;">
-                            <div class="w-16 h-16 rounded-full border border-green-500/40 overflow-hidden bg-gray-800">
-                                <img src="/artists/future.jpg" class="w-full h-full object-cover rounded-full" alt="Future" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Future</span>
-                        </div>
-                        <div onclick="loadArtist('Travis Scott')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 35%; left: 40%; animation: float1 6.5s ease-in-out infinite 0.5s;">
-                            <div class="w-20 h-20 rounded-full border-2 border-green-500/60 overflow-hidden bg-gray-800">
-                                <img src="/artists/travisscott.jpg" class="w-full h-full object-cover rounded-full" alt="Travis Scott" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Travis Scott</span>
-                        </div>
-                        <div onclick="loadArtist('21 Savage')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 30%; left: 70%; animation: float3 7.5s ease-in-out infinite 1.5s;">
-                            <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/21savage.jpg" class="w-full h-full object-cover rounded-full" alt="21 Savage" />
-                            </div>
-                            <span class="text-white text-xs font-medium">21 Savage</span>
-                        </div>
-                        <div onclick="loadArtist('Lil Baby')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 65%; left: 20%; animation: float1 7s ease-in-out infinite 2s;">
-                            <div class="w-12 h-12 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/lilbaby.jpg" class="w-full h-full object-cover rounded-full" alt="Lil Baby" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Lil Baby</span>
-                        </div>
-                        <div onclick="loadArtist('Gunna')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 65%; left: 55%; animation: float2 6s ease-in-out infinite 0.8s;">
-                            <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/gunna.jpg" class="w-full h-full object-cover rounded-full" alt="Gunna" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Gunna</span>
-                        </div>
-                        <div onclick="loadArtist('Young Thug')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 68%; left: 80%; animation: float3 5s ease-in-out infinite 1.2s;">
-                            <div class="w-12 h-12 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/youngthug.jpg" class="w-full h-full object-cover rounded-full" alt="Young Thug" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Young Thug</span>
-                        </div>
-                        <div onclick="loadArtist('Eminem')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 20%; left: 85%; animation: float1 8s ease-in-out infinite 0.4s;">
-                            <div class="w-18 h-18 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/eminem.jpg" class="w-full h-full object-cover rounded-full" alt="Eminem" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Eminem</span>
-                        </div>
-                        <div onclick="loadArtist('Jay-Z')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 75%; left: 35%; animation: float2 6.5s ease-in-out infinite 1.8s;">
-                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/jayz.jpg" class="w-full h-full object-cover rounded-full" alt="Jay-Z" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Jay-Z</span>
-                        </div>
-                        <div onclick="loadArtist('Nicki Minaj')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 75%; left: 65%; animation: float3 7s ease-in-out infinite 0.9s;">
-                            <div class="w-15 h-15 rounded-full border border-white/20 overflow-hidden bg-gray-800">
-                                <img src="/artists/nickiminaj.jpg" class="w-full h-full object-cover rounded-full" alt="Nicki Minaj" />
-                            </div>
-                            <span class="text-white text-xs font-medium">Nicki Minaj</span>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- TEXT -->
-    <section class=" p-5 md:py-25 w-full">
-        <div class="flex items-center justify-center w-full">
-            <h1 class="mb-6 max-w-5xl text-center text-4xl font-medium tracking-tighter text-white md:text-5xl lg:text-6xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock</h1>
+
         </div>
     </section>
     {{-- WHY CHOOSE SIMILART --}}
@@ -482,7 +478,6 @@
 
         </div>
     </section>
-
     {{-- FEATURE / CTA SECTION --}}
     <section class="w-full flex items-center justify-center bg-black px-4 py-0">
         <div class="w-full max-w-6xl">
@@ -581,9 +576,6 @@
             <div class="w-full h-px bg-white/10"></div>
 
         </div>
-    </section>
-
-    </div>
     </section>
 
     {{-- HOW DOES IT WORK --}}
@@ -705,6 +697,240 @@
 
         </div>
     </section>
+    {{-- TESTIMONIALS --}}
+    <section class="w-full flex flex-col items-center justify-center bg-black px-4 py-0">
+        <div class="w-full max-w-6xl mx-auto">
+
+            <div class="w-full h-px bg-white/10"></div>
+
+            {{-- Header row --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 border-b border-white/10">
+                <div class="p-10 border-r border-white/10">
+                    <h2 class="text-white text-3xl md:text-4xl font-bold leading-tight">Some kind insights<br>from our users</h2>
+                </div>
+                <div class="p-10 flex items-center">
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Real music lovers sharing how SimilArt helped them discover artists they never would have found on their own.
+                    </p>
+                </div>
+            </div>
+
+            {{-- Testimonial + nav row --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 border-b border-white/10">
+
+                {{-- Active testimonial --}}
+                <div id="testimonial-card" class="p-10 border-r border-white/10 flex flex-col justify-between gap-8 min-h-[220px]">
+                    <div class="flex flex-col gap-6">
+                        <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center">
+                            <span id="testimonial-initials" class="text-black text-xs font-bold">JD</span>
+                        </div>
+                        <p id="testimonial-quote" class="text-gray-300 text-sm leading-relaxed">
+                            "SimilArt is genuinely the best way to explore music. I searched for one artist and ended up discovering 10 more I love."
+                        </p>
+                    </div>
+                    <div>
+                        <p id="testimonial-name" class="text-white text-sm font-semibold">John Doe</p>
+                        <p id="testimonial-role" class="text-gray-500 text-xs mt-0.5">Music Listener and Enthusiast</p>
+                    </div>
+                </div>
+
+                {{-- Nav buttons --}}
+                <div class="flex flex-col">
+                    <button onclick="prevTestimonial()"
+                        class="flex-1 flex items-center gap-3 px-10 py-8 border-b border-white/10 text-gray-400 hover:text-white hover:bg-white/[0.02] transition-all duration-200 text-sm group">
+                        <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                        </svg>
+                        Previous
+                    </button>
+                    <button onclick="nextTestimonial()"
+                        class="flex-1 flex items-center justify-end gap-3 px-10 py-8 text-gray-400 hover:text-white hover:bg-white/[0.02] transition-all duration-200 text-sm group">
+                        Next
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="w-full h-px bg-white/10"></div>
+
+        </div>
+    </section>
+
+    {{-- FAQ --}}
+    <section class="w-full flex flex-col items-center justify-center bg-black px-4 py-0">
+        <div class="w-full max-w-6xl mx-auto">
+
+            <div class="w-full h-px bg-white/10"></div>
+
+            {{-- Header row --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 border-b border-white/10">
+                <div class="p-10 border-r border-white/10">
+                    <h2 class="text-white text-3xl md:text-4xl font-bold mb-2">Your Questions,<br>Answered</h2>
+                    <p class="text-gray-500 text-sm leading-relaxed mt-3">Everything you need to know about SimilArt.</p>
+                </div>
+                <div class="p-10 flex items-center justify-end">
+                    <a href="#explore" class="inline-flex items-center gap-2 text-green-400 text-sm font-medium hover:text-green-300 transition-colors duration-200">
+                        Start exploring now
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            {{-- FAQ grid --}}
+            <div class="grid grid-cols-1 md:grid-cols-2">
+
+                {{-- Col 1 --}}
+                <div class="border-r border-white/10">
+                    <div class="faq-item border-b border-white/10 px-10 py-6 flex items-center justify-between gap-4 cursor-pointer hover:bg-white/[0.02] transition-colors duration-200 group" onclick="toggleFaq(this)">
+                        <p class="text-gray-300 text-sm group-hover:text-white transition-colors">Do I need an account to use SimilArt?</p>
+                        <span class="text-gray-500 text-lg flex-shrink-0 faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer hidden px-10 py-5 border-b border-white/10 bg-white/[0.01]">
+                        <p class="text-gray-500 text-sm leading-relaxed">No account needed. Just search for any artist and start exploring instantly.</p>
+                    </div>
+
+                    <div class="faq-item border-b border-white/10 px-10 py-6 flex items-center justify-between gap-4 cursor-pointer hover:bg-white/[0.02] transition-colors duration-200 group" onclick="toggleFaq(this)">
+                        <p class="text-gray-300 text-sm group-hover:text-white transition-colors">Where does the music data come from?</p>
+                        <span class="text-gray-500 text-lg flex-shrink-0 faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer hidden px-10 py-5 border-b border-white/10 bg-white/[0.01]">
+                        <p class="text-gray-500 text-sm leading-relaxed">We pull data from Last.fm and Deezer — two of the largest music intelligence databases in the world.</p>
+                    </div>
+
+                    <div class="faq-item border-b border-white/10 px-10 py-6 flex items-center justify-between gap-4 cursor-pointer hover:bg-white/[0.02] transition-colors duration-200 group" onclick="toggleFaq(this)">
+                        <p class="text-gray-300 text-sm group-hover:text-white transition-colors">Can I listen to full songs on SimilArt?</p>
+                        <span class="text-gray-500 text-lg flex-shrink-0 faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer hidden px-10 py-5 border-b border-white/10 bg-white/[0.01]">
+                        <p class="text-gray-500 text-sm leading-relaxed">SimilArt provides 30-second previews via Deezer. For full songs, we link you directly to Deezer, Apple Music, and Last.fm.</p>
+                    </div>
+
+                    <div class="faq-item border-b md:border-b-0 border-white/10 px-10 py-6 flex items-center justify-between gap-4 cursor-pointer hover:bg-white/[0.02] transition-colors duration-200 group" onclick="toggleFaq(this)">
+                        <p class="text-gray-300 text-sm group-hover:text-white transition-colors">Is SimilArt free to use?</p>
+                        <span class="text-gray-500 text-lg flex-shrink-0 faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer hidden px-10 py-5 border-b md:border-b-0 border-white/10 bg-white/[0.01]">
+                        <p class="text-gray-500 text-sm leading-relaxed">Yes, completely free. No subscriptions, no hidden fees.</p>
+                    </div>
+                </div>
+
+                {{-- Col 2 --}}
+                <div>
+                    <div class="faq-item border-b border-white/10 px-10 py-6 flex items-center justify-between gap-4 cursor-pointer hover:bg-white/[0.02] transition-colors duration-200 group" onclick="toggleFaq(this)">
+                        <p class="text-gray-300 text-sm group-hover:text-white transition-colors">How accurate are the similar artist suggestions?</p>
+                        <span class="text-gray-500 text-lg flex-shrink-0 faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer hidden px-10 py-5 border-b border-white/10 bg-white/[0.01]">
+                        <p class="text-gray-500 text-sm leading-relaxed">Very accurate. We use Deezer's music graph which analyzes listening patterns, genre, and sound characteristics across millions of users.</p>
+                    </div>
+
+                    <div class="faq-item border-b border-white/10 px-10 py-6 flex items-center justify-between gap-4 cursor-pointer hover:bg-white/[0.02] transition-colors duration-200 group" onclick="toggleFaq(this)">
+                        <p class="text-gray-300 text-sm group-hover:text-white transition-colors">What genres does SimilArt support?</p>
+                        <span class="text-gray-500 text-lg flex-shrink-0 faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer hidden px-10 py-5 border-b border-white/10 bg-white/[0.01]">
+                        <p class="text-gray-500 text-sm leading-relaxed">All genres — Hip Hop, Pop, Rock, R&B, Electronic, Classical, Jazz, and everything in between.</p>
+                    </div>
+
+                    <div class="faq-item border-b border-white/10 px-10 py-6 flex items-center justify-between gap-4 cursor-pointer hover:bg-white/[0.02] transition-colors duration-200 group" onclick="toggleFaq(this)">
+                        <p class="text-gray-300 text-sm group-hover:text-white transition-colors">Can I search for any artist in the world?</p>
+                        <span class="text-gray-500 text-lg flex-shrink-0 faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer hidden px-10 py-5 border-b border-white/10 bg-white/[0.01]">
+                        <p class="text-gray-500 text-sm leading-relaxed">Yes. As long as the artist is on Deezer or Last.fm, SimilArt can find them — from global superstars to underground indie acts.</p>
+                    </div>
+
+                    <div class="faq-item border-b border-white/10 px-10 py-6 flex items-center justify-between gap-4 cursor-pointer hover:bg-white/[0.02] transition-colors duration-200 group" onclick="toggleFaq(this)">
+                        <p class="text-gray-300 text-sm group-hover:text-white transition-colors">How many similar artists will I see per search?</p>
+                        <span class="text-gray-500 text-lg flex-shrink-0 faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer hidden px-10 py-5 border-b border-white/10 bg-white/[0.01]">
+                        <p class="text-gray-500 text-sm leading-relaxed">Up to 12 similar artists per search, displayed as floating bubbles you can click to keep exploring.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="w-full h-px bg-white/10"></div>
+
+        </div>
+    </section>
+
+    <script>
+        // --- Testimonials ---
+        const testimonials = [{
+                initials: 'JD',
+                quote: '"SimilArt is genuinely the best way to explore music. I searched for one artist and ended up discovering 10 more I love."',
+                name: 'John Doe',
+                role: 'Music Listener and Enthusiast'
+            },
+            {
+                initials: 'SR',
+                quote: '"I found my new favorite artist in under a minute. The floating bubbles make it so fun to explore — I can\'t stop clicking."',
+                name: 'Sofia R.',
+                role: 'Independent Music Blogger'
+            },
+            {
+                initials: 'MK',
+                quote: '"Finally a tool that actually understands music similarity. The previews are a great touch — I know exactly what I\'m getting into."',
+                name: 'Marcus K.',
+                role: 'Playlist Curator'
+            },
+            {
+                initials: 'AL',
+                quote: '"SimilArt helped me get out of my music bubble. I went from only listening to Drake to discovering a whole world of artists."',
+                name: 'Aisha L.',
+                role: 'Casual Listener'
+            },
+        ];
+
+        let currentTestimonial = 0;
+
+        function renderTestimonial() {
+            const t = testimonials[currentTestimonial];
+            const card = document.getElementById('testimonial-card');
+            card.style.opacity = '0';
+            card.style.transition = 'opacity 0.2s ease';
+            setTimeout(() => {
+                document.getElementById('testimonial-initials').textContent = t.initials;
+                document.getElementById('testimonial-quote').textContent = t.quote;
+                document.getElementById('testimonial-name').textContent = t.name;
+                document.getElementById('testimonial-role').textContent = t.role;
+                card.style.opacity = '1';
+            }, 200);
+        }
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            renderTestimonial();
+        }
+
+        function prevTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            renderTestimonial();
+        }
+
+        // --- FAQ ---
+        function toggleFaq(el) {
+            const answer = el.nextElementSibling;
+            const icon = el.querySelector('.faq-icon');
+            const isOpen = !answer.classList.contains('hidden');
+
+            // Close all
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+            document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+
+            if (!isOpen) {
+                answer.classList.remove('hidden');
+                icon.textContent = '−';
+            }
+        }
+    </script>
 
     <style>
         @keyframes marquee {
@@ -727,8 +953,6 @@
             }
         }
     </style>
-
-
     <style>
         .artist-default {
             cursor: pointer;
