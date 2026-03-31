@@ -76,7 +76,7 @@
 
                 {{-- CTA Button --}}
                 <a href="#explore"
-                    class="text-base bg-green-600 font-medium transition-all duration-300 hover:shadow-[0px_0px_20px_rgba(0,255,0,0.5)] px-4 py-2 rounded-full">
+                    class="text-base bg-green-600 hidden md:block font-medium transition-all duration-300 hover:shadow-[0px_0px_20px_rgba(0,255,0,0.5)] px-4 py-2 rounded-full">
                     Start Exploring
                 </a>
 
@@ -163,17 +163,16 @@
                 {{-- Left: Artist Card --}}
                 <div class="flex-shrink-0 w-full max-w-[300px] mx-auto md:mx-0">
 
-                    {{-- Empty state --}}
-                    <div id="artist-empty" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl p-8 flex flex-col items-center justify-center min-h-[300px]">
+                    {{-- Empty state - hidden by default --}}
+                    <div id="artist-empty" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl p-8 flex-col items-center justify-center min-h-[300px] hidden">
                         <svg class="w-12 h-12 text-gray-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                         </svg>
                         <p class="text-gray-500 text-sm text-center">Search for an artist to see their info</p>
                     </div>
 
-                    {{-- Loaded artist card --}}
-                    {{-- Loaded artist card --}}
-                    <div id="artist-card" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl hidden">
+                    {{-- Loaded artist card - visible by default with Drake --}}
+                    <div id="artist-card" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl">
                         <button id="play-button"
                             class="absolute top-2 end-2 bg-green-600 box-border border border-transparent cursor-pointer hover:ring-4 hover:ring-green-300 transition-all duration-300 rounded-full mt-5 mr-5 p-1.5 focus:outline-none"
                             type="button" title="Preview top track">
@@ -183,29 +182,31 @@
                         </button>
                         <div class="flex flex-col gap-1 items-center">
                             <div class="w-24 h-24 mb-4 mt-5 rounded-full overflow-hidden border-2 border-green-500 bg-gray-800">
-                                <img id="artist-image" src="" class="w-full h-full object-cover" alt="artist" />
+                                <img id="artist-image"
+                                    src="https://cdn-images.dzcdn.net/images/artist/5d2fa7f140a6bdc2c864c3465a61fc71/500x500-000000-80-0-0.jpg"
+                                    class="w-full h-full object-cover" alt="artist" />
                             </div>
-                            <h5 id="artist-name" class="mb-0.5 text-2xl font-regular tracking-tight text-white text-center px-4"></h5>
-                            <span id="artist-tags" class="text-sm text-gray-300 text-center px-4"></span>
-                            <span id="artist-popularity" class="text-xs text-gray-400 mt-0.5"></span>
-                            <span id="artist-listeners" class="text-sm text-green-400 font-medium mt-1"></span>
-                            <p id="artist-bio" class="text-xs text-gray-400 text-center px-4 mt-2 line-clamp-3"></p>
+                            <h5 id="artist-name" class="mb-0.5 text-2xl font-regular tracking-tight text-white text-center px-4">Drake</h5>
+                            <span id="artist-tags" class="text-sm text-gray-300 text-center px-4">Hip-Hop | Rap | Pop</span>
+                            <span id="artist-popularity" class="text-xs text-gray-400 mt-0.5">23,906,313 fans on Deezer</span>
+                            <span id="artist-listeners" class="text-sm text-green-400 font-medium mt-1">55,441,858 monthly listeners</span>
+                            <p id="artist-bio" class="text-xs text-gray-400 text-center px-4 mt-2 line-clamp-3">Aubrey Drake Graham is a Canadian rapper, singer, songwriter, and actor. He is one of the world's best-selling music artists with over 170 million records sold worldwide.</p>
                             <div class="flex overflow-hidden mt-4 md:mt-6 flex-col w-full">
-                                <a id="deezer-link" href="#" target="_blank"
-                                    class="hidden inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
+                                <a id="deezer-link" href="https://www.deezer.com/artist/246791" target="_blank"
+                                    class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
                                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M18.81 11.282H24v1.474h-5.19zm0 3.21H24v1.474h-5.19zm0-6.418H24v1.473h-5.19zM0 17.906h5.19v-1.474H0zm6.462 0h5.19v-1.474h-5.19zm6.463 0h5.19v-1.474h-5.19zm6.462 0H24v-1.474h-5.19zM0 14.492h5.19v-1.474H0zm6.462 0h5.19v-1.474h-5.19zm6.463 0h5.19v-1.474h-5.19zM6.462 11.08h5.19V9.606h-5.19zm6.463 0h5.19V9.606h-5.19z" />
                                     </svg>
                                     Listen on Deezer
                                 </a>
-                                <a id="apple-music-link" href="#" target="_blank"
-                                    class="hidden inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
+                                <a id="apple-music-link" href="https://music.apple.com/search?term=Drake" target="_blank"
+                                    class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
                                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.048-2.31-2.1-3.123a5.022 5.022 0 00-1.515-.94c-.938-.332-1.894-.519-2.876-.548C16.67.305 16.076.3 15.482.296H8.518C7.924.3 7.33.305 6.737.323c-.982.029-1.938.216-2.876.548a5.014 5.014 0 00-1.515.94C1.294 2.624.563 3.624.246 4.934a9.23 9.23 0 00-.24 2.19C-.006 7.738 0 8.343 0 8.938v6.124c0 .595.006 1.2.03 1.794a9.23 9.23 0 00.24 2.19c.317 1.31 1.048 2.31 2.1 3.123a5.014 5.014 0 001.515.94c.938.332 1.894.519 2.876.548.593.018 1.187.024 1.781.02h6.964c.594.004 1.188-.002 1.781-.02.982-.029 1.938-.216 2.876-.548a5.014 5.014 0 001.515-.94c1.052-.813 1.783-1.813 2.1-3.123a9.23 9.23 0 00.24-2.19c.024-.594.03-1.199.03-1.794V8.938c0-.595-.006-1.2-.006-1.814zM12 18.404a6.404 6.404 0 110-12.808 6.404 6.404 0 010 12.808zm6.61-11.56a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM12 7.01a4.99 4.99 0 100 9.98A4.99 4.99 0 0012 7.01z" />
                                     </svg>
                                     Listen on Apple Music
                                 </a>
-                                <a id="lastfm-link" href="#" target="_blank"
+                                <a id="lastfm-link" href="https://www.last.fm/music/Drake" target="_blank"
                                     class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
                                     View on Last.fm
                                 </a>
@@ -214,23 +215,16 @@
                     </div>
 
                     {{-- Loading state --}}
-                    {{-- Loading state --}}
                     <div id="artist-loading" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl hidden p-5">
-                        {{-- Avatar skeleton --}}
                         <div class="flex justify-center mt-5 mb-4">
                             <div class="w-24 h-24 rounded-full skeleton"></div>
                         </div>
-                        {{-- Name --}}
                         <div class="skeleton h-5 w-3/4 mx-auto rounded-full mb-2"></div>
-                        {{-- Tags --}}
                         <div class="skeleton h-3 w-2/3 mx-auto rounded-full mb-1"></div>
-                        {{-- Listeners --}}
                         <div class="skeleton h-3 w-1/2 mx-auto rounded-full mb-4"></div>
-                        {{-- Bio lines --}}
                         <div class="skeleton h-2.5 w-full rounded-full mb-1.5"></div>
                         <div class="skeleton h-2.5 w-5/6 rounded-full mb-1.5"></div>
                         <div class="skeleton h-2.5 w-4/6 rounded-full mb-6"></div>
-                        {{-- Buttons --}}
                         <div class="skeleton h-10 w-full rounded-none mb-0"></div>
                         <div class="skeleton h-10 w-full rounded-none"></div>
                     </div>
@@ -240,40 +234,198 @@
                 {{-- Right: Similar Artists --}}
                 <div class="relative flex-1 w-full">
 
-                    {{-- Empty state --}}
-                    <div id="similar-empty" class="flex items-center justify-center h-[300px] md:h-[400px]">
+                    {{-- Empty state - hidden by default --}}
+                    <div id="similar-empty" class="hidden items-center justify-center h-[300px] md:h-[400px]">
                         <p class="text-gray-600 text-sm">Similar artists will appear here</p>
                     </div>
 
-                    {{-- Mobile grid --}}
-                    <div id="similar-mobile" class="grid grid-cols-3 gap-6 place-items-center md:hidden py-4 hidden"></div>
+                    {{-- Mobile grid - visible by default with Drake's similar artists --}}
+                    <div id="similar-mobile" class="grid grid-cols-3 gap-6 place-items-center md:hidden py-4">
+                        <div onclick="loadArtist('The Weeknd')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float1 6s ease-in-out infinite;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/theweeknd.jpg" class="w-full h-full object-cover rounded-full" alt="The Weeknd" />
+                            </div>
+                            <span class="text-white text-xs font-medium">The Weeknd</span>
+                        </div>
+                        <div onclick="loadArtist('Kendrick Lamar')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float2 7s ease-in-out infinite 0.3s;">
+                            <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/kendricklamar.jpg" class="w-full h-full object-cover rounded-full" alt="Kendrick Lamar" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Kendrick Lamar</span>
+                        </div>
+                        <div onclick="loadArtist('J. Cole')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float3 5.5s ease-in-out infinite 0.6s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/jcole.jpg" class="w-full h-full object-cover rounded-full" alt="J. Cole" />
+                            </div>
+                            <span class="text-white text-xs font-medium">J. Cole</span>
+                        </div>
+                        <div onclick="loadArtist('Future')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float1 8s ease-in-out infinite 1s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/future.jpg" class="w-full h-full object-cover rounded-full" alt="Future" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Future</span>
+                        </div>
+                        <div onclick="loadArtist('Travis Scott')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float2 6.5s ease-in-out infinite 0.5s;">
+                            <div class="w-18 h-18 rounded-full border-2 border-green-500/60 overflow-hidden bg-gray-800">
+                                <img src="/artists/travisscott.jpg" class="w-full h-full object-cover rounded-full" alt="Travis Scott" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Travis Scott</span>
+                        </div>
+                        <div onclick="loadArtist('21 Savage')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float3 7.5s ease-in-out infinite 1.5s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/21savage.jpg" class="w-full h-full object-cover rounded-full" alt="21 Savage" />
+                            </div>
+                            <span class="text-white text-xs font-medium">21 Savage</span>
+                        </div>
+                        <div onclick="loadArtist('Lil Baby')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float1 7s ease-in-out infinite 2s;">
+                            <div class="w-20 h-20 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/lilbaby.jpg" class="w-full h-full object-cover rounded-full" alt="Lil Baby" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Lil Baby</span>
+                        </div>
+                        <div onclick="loadArtist('Gunna')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float2 6s ease-in-out infinite 0.8s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/gunna.jpg" class="w-full h-full object-cover rounded-full" alt="Gunna" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Gunna</span>
+                        </div>
+                        <div onclick="loadArtist('Young Thug')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float3 5s ease-in-out infinite 1.2s;">
+                            <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/youngthug.jpg" class="w-full h-full object-cover rounded-full" alt="Young Thug" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Young Thug</span>
+                        </div>
+                        <div onclick="loadArtist('Eminem')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float1 8s ease-in-out infinite 0.4s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/eminem.jpg" class="w-full h-full object-cover rounded-full" alt="Eminem" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Eminem</span>
+                        </div>
+                        <div onclick="loadArtist('Jay-Z')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float2 6.5s ease-in-out infinite 1.8s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/jayz.jpg" class="w-full h-full object-cover rounded-full" alt="Jay-Z" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Jay-Z</span>
+                        </div>
+                        <div onclick="loadArtist('Nicki Minaj')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float3 7s ease-in-out infinite 0.9s;">
+                            <div class="w-19 h-19 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/nickiminaj.jpg" class="w-full h-full object-cover rounded-full" alt="Nicki Minaj" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Nicki Minaj</span>
+                        </div>
+                    </div>
 
-                    {{-- Desktop absolute --}}
-                    <div id="similar-desktop" class="hidden md:block relative h-[400px]"></div>
+                    {{-- Desktop absolute - visible by default with Drake's similar artists --}}
+                    <div id="similar-desktop" class="hidden md:block relative h-[400px]">
+                        <div onclick="loadArtist('The Weeknd')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 5%; left: 15%; animation: float1 6s ease-in-out infinite;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/theweeknd.jpg" class="w-full h-full object-cover rounded-full" alt="The Weeknd" onerror="this.src='https://i.pravatar.cc/56?img=11'" />
+                            </div>
+                            <span class="text-white text-xs font-medium">The Weeknd</span>
+                        </div>
+                        <div onclick="loadArtist('Kendrick Lamar')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 10%; left: 50%; animation: float2 7s ease-in-out infinite 0.3s;">
+                            <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/kendricklamar.jpg" class="w-full h-full object-cover rounded-full" alt="Kendrick Lamar" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Kendrick Lamar</span>
+                        </div>
+                        <div onclick="loadArtist('J. Cole')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 5%; left: 75%; animation: float3 5.5s ease-in-out infinite 0.6s;">
+                            <div class="w-17 h-17 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/jcole.jpg" class="w-full h-full object-cover rounded-full" alt="J. Cole" />
+                            </div>
+                            <span class="text-white text-xs font-medium">J. Cole</span>
+                        </div>
+                        <div onclick="loadArtist('Future')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 40%; left: 10%; animation: float2 8s ease-in-out infinite 1s;">
+                            <div class="w-16 h-16 rounded-full border border-green-500/40 overflow-hidden bg-gray-800">
+                                <img src="/artists/future.jpg" class="w-full h-full object-cover rounded-full" alt="Future" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Future</span>
+                        </div>
+                        <div onclick="loadArtist('Travis Scott')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 35%; left: 40%; animation: float1 6.5s ease-in-out infinite 0.5s;">
+                            <div class="w-20 h-20 rounded-full border-2 border-green-500/60 overflow-hidden bg-gray-800">
+                                <img src="/artists/travisscott.jpg" class="w-full h-full object-cover rounded-full" alt="Travis Scott" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Travis Scott</span>
+                        </div>
+                        <div onclick="loadArtist('21 Savage')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 30%; left: 70%; animation: float3 7.5s ease-in-out infinite 1.5s;">
+                            <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/21savage.jpg" class="w-full h-full object-cover rounded-full" alt="21 Savage" />
+                            </div>
+                            <span class="text-white text-xs font-medium">21 Savage</span>
+                        </div>
+                        <div onclick="loadArtist('Lil Baby')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 65%; left: 20%; animation: float1 7s ease-in-out infinite 2s;">
+                            <div class="w-12 h-12 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/lilbaby.jpg" class="w-full h-full object-cover rounded-full" alt="Lil Baby" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Lil Baby</span>
+                        </div>
+                        <div onclick="loadArtist('Gunna')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 65%; left: 55%; animation: float2 6s ease-in-out infinite 0.8s;">
+                            <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/gunna.jpg" class="w-full h-full object-cover rounded-full" alt="Gunna" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Gunna</span>
+                        </div>
+                        <div onclick="loadArtist('Young Thug')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 68%; left: 80%; animation: float3 5s ease-in-out infinite 1.2s;">
+                            <div class="w-12 h-12 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/youngthug.jpg" class="w-full h-full object-cover rounded-full" alt="Young Thug" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Young Thug</span>
+                        </div>
+                        <div onclick="loadArtist('Eminem')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 20%; left: 85%; animation: float1 8s ease-in-out infinite 0.4s;">
+                            <div class="w-18 h-18 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/eminem.jpg" class="w-full h-full object-cover rounded-full" alt="Eminem" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Eminem</span>
+                        </div>
+                        <div onclick="loadArtist('Jay-Z')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 75%; left: 35%; animation: float2 6.5s ease-in-out infinite 1.8s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/jayz.jpg" class="w-full h-full object-cover rounded-full" alt="Jay-Z" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Jay-Z</span>
+                        </div>
+                        <div onclick="loadArtist('Nicki Minaj')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 75%; left: 65%; animation: float3 7s ease-in-out infinite 0.9s;">
+                            <div class="w-15 h-15 rounded-full border border-white/20 overflow-hidden bg-gray-800">
+                                <img src="/artists/nickiminaj.jpg" class="w-full h-full object-cover rounded-full" alt="Nicki Minaj" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Nicki Minaj</span>
+                        </div>
+                    </div>
 
                 </div>
             </div>
         </div>
     </section>
-
+    <!-- TEXT -->
+    <section class=" p-5 md:py-25 w-full">
+        <div class="flex items-center justify-center w-full">
+            <h1 class="mb-6 max-w-5xl text-center text-4xl font-medium tracking-tighter text-white md:text-5xl lg:text-6xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock</h1>
+        </div>
+    </section>
     <style>
-        .artist-float img {
-            transition: box-shadow 0.3s ease;
+        .artist-default {
+            transition: transform 0.2s ease;
+            will-change: transform;
+            cursor: pointer;
+            opacity: 1;
         }
 
-        .artist-float:hover img {
+        .artist-default:hover {
+            transform: scale(1.12) !important;
+            animation-play-state: paused;
+        }
+
+        .artist-default:hover img {
             box-shadow: 0 0 20px rgba(16, 185, 80, 0.7), 0 0 40px rgba(16, 185, 80, 0.3);
         }
 
-        .artist-float span {
+        .artist-default span {
             transition: color 0.3s ease;
         }
 
-        .artist-float:hover span {
+        .artist-default:hover span {
             color: #4ade80;
         }
 
-        /* Skeleton shimmer */
         .skeleton {
             background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 25%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.04) 75%);
             background-size: 200% 100%;
@@ -309,7 +461,8 @@
         }
 
         .artist-float {
-            opacity: 0;
+            opacity: 1;
+            cursor: pointer;
             animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
@@ -361,20 +514,6 @@
             }
         }
 
-        .artist-float {
-            transition: transform 0.2s ease;
-            will-change: transform;
-            cursor: pointer;
-        }
-
-        .artist-float:hover {
-            transform: scale(1.12) !important;
-            animation-play-state: paused;
-        }
-
-        .artist-float:hover img {
-            box-shadow: 0 0 16px rgba(16, 185, 80, 0.5);
-        }
 
         .line-clamp-3 {
             display: -webkit-box;
@@ -385,9 +524,6 @@
     </style>
 
     <script>
-        // Show skeleton immediately on page load before JS runs
-        document.getElementById('artist-loading').classList.remove('hidden');
-        document.getElementById('artist-empty').classList.add('hidden');
         const LASTFM_API_KEY = '9b63fe91f80052b4d121950664d7df8b';
         const LASTFM_BASE = 'https://ws.audioscrobbler.com/2.0/';
 
@@ -706,12 +842,6 @@
             document.getElementById('artist-card').classList.add('hidden');
             document.getElementById('artist-empty').classList.remove('hidden');
         }
-
-        document.addEventListener('DOMContentLoaded', async () => {
-            const popular = ['Taylor Swift', 'Drake', 'The Weeknd', 'Billie Eilish', 'Kendrick Lamar', 'Bad Bunny'];
-            const random = popular[Math.floor(Math.random() * popular.length)];
-            await loadArtist(random);
-        });
     </script>
 
 </body>
