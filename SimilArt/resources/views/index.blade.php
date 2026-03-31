@@ -112,7 +112,7 @@
     <!-- JUMBOTRON -->
     <section class="bg-[#000A04] mt-30 relative overflow-hidden pb-10 md:pb-15">
         <div class="py-8 px-4 mx-auto max-w-screen-2xl text-center lg:py-16">
-            <h1 class="mb-6 text-4xl font-medium tracking-tighter text-white md:text-5xl lg:text-6xl">We invest in the <br> world’s potential</h1>
+            <h1 class="mb-6 text-4xl font-medium tracking-tighter text-white md:text-5xl lg:text-6xl">Disover New Artists <br>With Just a Click</h1>
             <p class="mb-8 text-base font-normal text-gray-300 md:text-xl">Here at Flowbite we focus on markets where technology, innovation, <br> and capital can unlock long-term value and drive economic growth.</p>
             <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 md:space-x-4">
 
@@ -158,7 +158,7 @@
             </div>
 
             {{-- Main content --}}
-            <div class="relative flex flex-col md:flex-row items-start gap-8 px-8">
+            <div class="relative flex mt-5 md:mt-25  flex-col md:flex-row items-start gap-8 px-8">
 
                 {{-- Left: Artist Card --}}
                 <div class="flex-shrink-0 w-full max-w-[300px] mx-auto md:mx-0">
@@ -207,7 +207,7 @@
                                     Listen on Apple Music
                                 </a>
                                 <a id="lastfm-link" href="https://www.last.fm/music/Drake" target="_blank"
-                                    class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
+                                    class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
                                     View on Last.fm
                                 </a>
                             </div>
@@ -395,23 +395,259 @@
             </div>
         </div>
     </section>
-    <!-- TEXT -->
-    <section class=" p-5 md:py-25 w-full">
-        <div class="flex items-center justify-center w-full">
-            <h1 class="mb-6 max-w-5xl text-center text-4xl font-medium tracking-tighter text-white md:text-5xl lg:text-6xl">Here at flowbite we focus on markets where technology, innovation, and capital can unlock</h1>
+    {{-- WHY CHOOSE SIMILART --}}
+    <section class="w-full flex flex-col items-center justify-center py-24 px-4 bg-black relative overflow-hidden">
+
+        {{-- subtle grid bg --}}
+        <div class="absolute inset-0 pointer-events-none"
+            style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px;">
+        </div>
+
+        {{-- heading --}}
+        <div class="relative z-10 text-center max-w-2xl mb-16">
+            <h2 class="text-white text-4xl md:text-5xl font-bold mb-4">Why Choose SimilArt?</h2>
+            <p class="text-gray-400 text-base md:text-lg leading-relaxed">
+                SimilArt uses music intelligence to map the DNA of any artist —
+                so you always find your next obsession.
+            </p>
+        </div>
+
+        {{-- feature cards --}}
+        <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px w-full max-w-6xl border border-white/5 rounded-2xl overflow-hidden">
+
+            {{-- Card 1 --}}
+            <div class="group bg-[#030a05] hover:bg-[#061209] transition-colors duration-300 p-8 flex flex-col gap-4 border-r border-white/5">
+                <div class="w-9 h-9 rounded-full border border-green-500/40 flex items-center justify-center bg-green-500/10">
+                    <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </div>
+                <h3 class="text-white font-semibold text-base">Instant Artist Discovery</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Search any artist and instantly see who sounds like them — powered by real music data.</p>
+            </div>
+
+            {{-- Card 2 --}}
+            <div class="group bg-[#030a05] hover:bg-[#061209] transition-colors duration-300 p-8 flex flex-col gap-4 border-r border-white/5">
+                <div class="w-9 h-9 rounded-full border border-green-500/40 flex items-center justify-center bg-green-500/10">
+                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" />
+                    </svg>
+                </div>
+                <h3 class="text-white font-semibold text-base">30-Second Previews</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Preview the top track of any artist directly in the app before committing to a full listen.</p>
+            </div>
+
+            {{-- Card 3 --}}
+            <div class="group bg-[#030a05] hover:bg-[#061209] transition-colors duration-300 p-8 flex flex-col gap-4 border-r border-white/5">
+                <div class="w-9 h-9 rounded-full border border-green-500/40 flex items-center justify-center bg-green-500/10">
+                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                </div>
+                <h3 class="text-white font-semibold text-base">Multi-Platform Links</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Jump straight to Deezer, Apple Music, or Last.fm with one click — no extra searching needed.</p>
+            </div>
+
+            {{-- Card 4 --}}
+            <div class="group bg-[#030a05] hover:bg-[#061209] transition-colors duration-300 p-8 flex flex-col gap-4">
+                <div class="w-9 h-9 rounded-full border border-green-500/40 flex items-center justify-center bg-green-500/10">
+                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+                    </svg>
+                </div>
+                <h3 class="text-white font-semibold text-base">Endless Rabbit Holes</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Click any similar artist to explore their world — the discovery never ends.</p>
+            </div>
+
         </div>
     </section>
+
+    {{-- FEATURE HIGHLIGHT --}}
+    <section class="w-full flex items-center justify-center bg-black pb-24 px-4">
+        <div class="w-full max-w-6xl border border-white/5 rounded-2xl overflow-hidden relative">
+
+            {{-- top border glow --}}
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 h-px w-3/4 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+
+            <div class="flex flex-col md:flex-row">
+
+                {{-- Left: text --}}
+                <div class="flex flex-col justify-center gap-6 p-10 md:p-14 md:w-2/5 bg-[#030a05]">
+                    <div class="w-9 h-9 rounded-full border border-green-500/40 flex items-center justify-center bg-green-500/10">
+                        <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-white text-2xl md:text-3xl font-bold leading-snug">
+                        Discover Similar Artists Instantly
+                    </h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Type in any artist you love and SimilArt maps out their sonic neighbours —
+                        artists with the same energy, style, and sound. Each result is clickable,
+                        letting you explore endlessly without ever leaving the page.
+                    </p>
+                    <a href="#explore" class="inline-flex items-center gap-2 text-green-400 text-sm font-medium hover:text-green-300 transition-colors duration-200">
+                        Start exploring now
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                {{-- Right: scrolling artist bubble marquee --}}
+                <div class="relative md:w-3/5 bg-[#010801] overflow-hidden flex flex-col gap-3 py-8"
+                    style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+
+                    {{-- Row 1 --}}
+                    <div class="flex gap-3 marquee-row">
+                        <div class="marquee-track flex gap-3">
+                            @foreach (['Drake','The Weeknd','Kendrick Lamar','Travis Scott','J. Cole','21 Savage','Future','Lil Baby','Drake','The Weeknd','Kendrick Lamar','Travis Scott'] as $artist)
+                            <div class="flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-full bg-[#0f1912]/80 border border-white/10 backdrop-blur-sm">
+                                <div class="w-7 h-7 rounded-full bg-gray-700 overflow-hidden border border-green-500/30">
+                                    <img src="https://i.pravatar.cc/28?img={{ $loop->index + 1 }}" class="w-full h-full object-cover" alt="{{ $artist }}" />
+                                </div>
+                                <div class="leading-tight">
+                                    <p class="text-white text-xs font-semibold whitespace-nowrap">{{ $artist }}</p>
+                                    <p class="text-gray-500 text-[10px] whitespace-nowrap">Hip Hop</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        {{-- duplicate for seamless loop --}}
+                        <div class="marquee-track flex gap-3" aria-hidden="true">
+                            @foreach (['Drake','The Weeknd','Kendrick Lamar','Travis Scott','J. Cole','21 Savage','Future','Lil Baby','Drake','The Weeknd','Kendrick Lamar','Travis Scott'] as $artist)
+                            <div class="flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-full bg-[#0f1912]/80 border border-white/10 backdrop-blur-sm">
+                                <div class="w-7 h-7 rounded-full bg-gray-700 overflow-hidden border border-green-500/30">
+                                    <img src="https://i.pravatar.cc/28?img={{ $loop->index + 10 }}" class="w-full h-full object-cover" alt="{{ $artist }}" />
+                                </div>
+                                <div class="leading-tight">
+                                    <p class="text-white text-xs font-semibold whitespace-nowrap">{{ $artist }}</p>
+                                    <p class="text-gray-500 text-[10px] whitespace-nowrap">Hip Hop</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    {{-- Row 2 (reverse) --}}
+                    <div class="flex gap-3 marquee-row-reverse">
+                        <div class="marquee-track-reverse flex gap-3">
+                            @foreach (['Gunna','Young Thug','Eminem','Jay-Z','Nicki Minaj','Post Malone','Cardi B','Juice WRLD','Gunna','Young Thug','Eminem','Jay-Z'] as $artist)
+                            <div class="flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-full bg-[#0f1912]/80 border border-white/10 backdrop-blur-sm">
+                                <div class="w-7 h-7 rounded-full bg-gray-700 overflow-hidden border border-green-500/30">
+                                    <img src="https://i.pravatar.cc/28?img={{ $loop->index + 20 }}" class="w-full h-full object-cover" alt="{{ $artist }}" />
+                                </div>
+                                <div class="leading-tight">
+                                    <p class="text-white text-xs font-semibold whitespace-nowrap">{{ $artist }}</p>
+                                    <p class="text-gray-500 text-[10px] whitespace-nowrap">Hip Hop</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        <div class="marquee-track-reverse flex gap-3" aria-hidden="true">
+                            @foreach (['Gunna','Young Thug','Eminem','Jay-Z','Nicki Minaj','Post Malone','Cardi B','Juice WRLD','Gunna','Young Thug','Eminem','Jay-Z'] as $artist)
+                            <div class="flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-full bg-[#0f1912]/80 border border-white/10 backdrop-blur-sm">
+                                <div class="w-7 h-7 rounded-full bg-gray-700 overflow-hidden border border-green-500/30">
+                                    <img src="https://i.pravatar.cc/28?img={{ $loop->index + 30 }}" class="w-full h-full object-cover" alt="{{ $artist }}" />
+                                </div>
+                                <div class="leading-tight">
+                                    <p class="text-white text-xs font-semibold whitespace-nowrap">{{ $artist }}</p>
+                                    <p class="text-gray-500 text-[10px] whitespace-nowrap">Hip Hop</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    {{-- Row 3 --}}
+                    <div class="flex gap-3 marquee-row">
+                        <div class="marquee-track flex gap-3">
+                            @foreach (['Lil Uzi Vert','Playboi Carti','SZA','Frank Ocean','Tyler the Creator','Childish Gambino','Mac Miller','ASAP Rocky','Lil Uzi Vert','Playboi Carti','SZA','Frank Ocean'] as $artist)
+                            <div class="flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-full bg-[#0f1912]/80 border border-white/10 backdrop-blur-sm">
+                                <div class="w-7 h-7 rounded-full bg-gray-700 overflow-hidden border border-green-500/30">
+                                    <img src="https://i.pravatar.cc/28?img={{ $loop->index + 40 }}" class="w-full h-full object-cover" alt="{{ $artist }}" />
+                                </div>
+                                <div class="leading-tight">
+                                    <p class="text-white text-xs font-semibold whitespace-nowrap">{{ $artist }}</p>
+                                    <p class="text-gray-500 text-[10px] whitespace-nowrap">Hip Hop</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        <div class="marquee-track flex gap-3" aria-hidden="true">
+                            @foreach (['Lil Uzi Vert','Playboi Carti','SZA','Frank Ocean','Tyler the Creator','Childish Gambino','Mac Miller','ASAP Rocky','Lil Uzi Vert','Playboi Carti','SZA','Frank Ocean'] as $artist)
+                            <div class="flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-full bg-[#0f1912]/80 border border-white/10 backdrop-blur-sm">
+                                <div class="w-7 h-7 rounded-full bg-gray-700 overflow-hidden border border-green-500/30">
+                                    <img src="https://i.pravatar.cc/28?img={{ $loop->index + 50 }}" class="w-full h-full object-cover" alt="{{ $artist }}" />
+                                </div>
+                                <div class="leading-tight">
+                                    <p class="text-white text-xs font-semibold whitespace-nowrap">{{ $artist }}</p>
+                                    <p class="text-gray-500 text-[10px] whitespace-nowrap">Hip Hop</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    {{-- Row 4 (reverse) --}}
+                    <div class="flex gap-3 marquee-row-reverse">
+                        <div class="marquee-track-reverse flex gap-3">
+                            @foreach (['Billie Eilish','Ariana Grande','Doja Cat','Olivia Rodrigo','Harry Styles','Taylor Swift','Bad Bunny','The Kid LAROI','Billie Eilish','Ariana Grande','Doja Cat','Olivia Rodrigo'] as $artist)
+                            <div class="flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-full bg-[#0f1912]/80 border border-white/10 backdrop-blur-sm">
+                                <div class="w-7 h-7 rounded-full bg-gray-700 overflow-hidden border border-green-500/30">
+                                    <img src="https://i.pravatar.cc/28?img={{ $loop->index + 5 }}" class="w-full h-full object-cover" alt="{{ $artist }}" />
+                                </div>
+                                <div class="leading-tight">
+                                    <p class="text-white text-xs font-semibold whitespace-nowrap">{{ $artist }}</p>
+                                    <p class="text-gray-500 text-[10px] whitespace-nowrap">Pop</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        <div class="marquee-track-reverse flex gap-3" aria-hidden="true">
+                            @foreach (['Billie Eilish','Ariana Grande','Doja Cat','Olivia Rodrigo','Harry Styles','Taylor Swift','Bad Bunny','The Kid LAROI','Billie Eilish','Ariana Grande','Doja Cat','Olivia Rodrigo'] as $artist)
+                            <div class="flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-full bg-[#0f1912]/80 border border-white/10 backdrop-blur-sm">
+                                <div class="w-7 h-7 rounded-full bg-gray-700 overflow-hidden border border-green-500/30">
+                                    <img src="https://i.pravatar.cc/28?img={{ $loop->index + 15 }}" class="w-full h-full object-cover" alt="{{ $artist }}" />
+                                </div>
+                                <div class="leading-tight">
+                                    <p class="text-white text-xs font-semibold whitespace-nowrap">{{ $artist }}</p>
+                                    <p class="text-gray-500 text-[10px] whitespace-nowrap">Pop</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <style>
-        .artist-default {
-            transition: transform 0.2s ease;
-            will-change: transform;
-            cursor: pointer;
-            opacity: 1;
+        .marquee-row {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
         }
 
-        .artist-default:hover {
-            transform: scale(1.12) !important;
+        .marquee-row:hover {
             animation-play-state: paused;
+        }
+
+        .marquee-row-reverse {
+            display: flex;
+            width: max-content;
+            animation: marquee-reverse 35s linear infinite;
+        }
+
+        .marquee-row-reverse:hover {
+            animation-play-state: paused;
+        }
+
+        .artist-default {
+            cursor: pointer;
+            opacity: 1;
         }
 
         .artist-default:hover img {
@@ -427,15 +663,8 @@
         }
 
         .artist-float {
-            transition: transform 0.2s ease;
-            will-change: transform;
             cursor: pointer;
             opacity: 1;
-        }
-
-        .artist-float:hover {
-            transform: scale(1.12) !important;
-            animation-play-state: paused;
         }
 
         .artist-float:hover img {
@@ -484,6 +713,26 @@
             }
         }
 
+        /* Marquee animations */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes marquee-reverse {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
 
         @keyframes float1 {
 
@@ -541,7 +790,6 @@
             overflow: hidden;
         }
     </style>
-
     <script>
         const LASTFM_API_KEY = '9b63fe91f80052b4d121950664d7df8b';
         const LASTFM_BASE = 'https://ws.audioscrobbler.com/2.0/';
@@ -551,46 +799,52 @@
 
         const floatAnims = ['float1', 'float2', 'float3'];
         const desktopPositions = [{
-                top: '5%',
-                left: '15%'
-            }, {
-                top: '10%',
-                left: '50%'
+                top: '3%',
+                left: '8%'
             },
             {
-                top: '5%',
-                left: '75%'
-            }, {
-                top: '40%',
-                left: '10%'
+                top: '8%',
+                left: '38%'
             },
             {
-                top: '35%',
-                left: '40%'
-            }, {
-                top: '30%',
-                left: '70%'
+                top: '2%',
+                left: '62%'
             },
             {
-                top: '65%',
-                left: '20%'
-            }, {
-                top: '65%',
+                top: '12%',
+                left: '82%'
+            },
+            {
+                top: '32%',
+                left: '22%'
+            },
+            {
+                top: '42%',
                 left: '55%'
             },
             {
-                top: '68%',
-                left: '80%'
-            }, {
-                top: '50%',
-                left: '30%'
+                top: '38%',
+                left: '78%'
             },
             {
-                top: '20%',
-                left: '85%'
-            }, {
-                top: '75%',
-                left: '45%'
+                top: '58%',
+                left: '12%'
+            },
+            {
+                top: '62%',
+                left: '42%'
+            },
+            {
+                top: '55%',
+                left: '68%'
+            },
+            {
+                top: '70%',
+                left: '88%'
+            },
+            {
+                top: '72%',
+                left: '28%'
             },
         ];
         const sizes = ['w-12 h-12', 'w-14 h-14', 'w-16 h-16', 'w-20 h-20'];
@@ -861,71 +1115,77 @@
             document.getElementById('similar-desktop').style.display = window.innerWidth >= 768 ? 'block' : 'none';
             document.getElementById('similar-mobile').style.display = window.innerWidth < 768 ? 'grid' : 'none';
 
-                const positions = [{
-                        top: '5%',
-                        left: '15%'
-                    }, {
-                        top: '10%',
-                        left: '50%'
-                    },
-                    {
-                        top: '5%',
-                        left: '75%'
-                    }, {
-                        top: '40%',
-                        left: '10%'
-                    },
-                    {
-                        top: '35%',
-                        left: '40%'
-                    }, {
-                        top: '30%',
-                        left: '70%'
-                    },
-                    {
-                        top: '65%',
-                        left: '20%'
-                    }, {
-                        top: '65%',
-                        left: '55%'
-                    },
-                    {
-                        top: '68%',
-                        left: '80%'
-                    }, {
-                        top: '20%',
-                        left: '85%'
-                    },
-                    {
-                        top: '75%',
-                        left: '35%'
-                    }, {
-                        top: '75%',
-                        left: '65%'
-                    },
-                ];
-                positions.forEach(pos => {
-                    const el = document.createElement('div');
-                    el.className = 'absolute flex flex-col items-center gap-1';
-                    el.style.cssText = `top: ${pos.top}; left: ${pos.left};`;
-                    el.innerHTML = `
+            const positions = [{
+                    top: '3%',
+                    left: '8%'
+                },
+                {
+                    top: '8%',
+                    left: '38%'
+                },
+                {
+                    top: '2%',
+                    left: '62%'
+                },
+                {
+                    top: '12%',
+                    left: '82%'
+                },
+                {
+                    top: '32%',
+                    left: '22%'
+                },
+                {
+                    top: '42%',
+                    left: '55%'
+                },
+                {
+                    top: '38%',
+                    left: '78%'
+                },
+                {
+                    top: '58%',
+                    left: '12%'
+                },
+                {
+                    top: '62%',
+                    left: '42%'
+                },
+                {
+                    top: '55%',
+                    left: '68%'
+                },
+                {
+                    top: '70%',
+                    left: '88%'
+                },
+                {
+                    top: '72%',
+                    left: '28%'
+                },
+            ];
+            positions.forEach(pos => {
+                const el = document.createElement('div');
+                el.className = 'absolute flex flex-col items-center gap-1';
+                el.style.cssText = `top: ${pos.top}; left: ${pos.left};`;
+                el.innerHTML = `
                 <div class="skeleton w-14 h-14 rounded-full"></div>
                 <div class="skeleton h-2.5 w-12 rounded-full mt-1"></div>
             `;
-                    document.getElementById('similar-desktop').appendChild(el);
-                });
-                // Mobile skeletons
-               document.getElementById('similar-mobile').className = 'grid grid-cols-3 gap-6 place-items-center py-4 md:hidden';
-                for (let i = 0; i < 12; i++) {
-                    const el = document.createElement('div');
-                    el.className = 'flex flex-col items-center gap-1';
-                    el.innerHTML = `
+                document.getElementById('similar-desktop').appendChild(el);
+            });
+            // Mobile skeletons
+            document.getElementById('similar-mobile').className = 'grid grid-cols-3 gap-6 place-items-center py-4 md:hidden';
+            for (let i = 0; i < 12; i++) {
+                const el = document.createElement('div');
+                el.className = 'flex flex-col items-center gap-1';
+                el.innerHTML = `
                 <div class="skeleton w-14 h-14 rounded-full"></div>
                 <div class="skeleton h-2.5 w-12 rounded-full mt-1"></div>
             `;
-                    document.getElementById('similar-mobile').appendChild(el);
-                }
+                document.getElementById('similar-mobile').appendChild(el);
             }
+        }
 
         function showEmpty() {
             document.getElementById('artist-loading').classList.add('hidden');
