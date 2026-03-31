@@ -399,7 +399,7 @@
     <section class="w-full flex flex-col items-center justify-center py-24 px-4 bg-black relative overflow-hidden">
 
         {{-- subtle grid bg --}}
-        <div class="absolute inset-0 pointer-events-none"
+        <div class="absolute mt-5 md:mt-30 inset-0 pointer-events-none"
             style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px;">
         </div>
 
@@ -413,7 +413,7 @@
         </div>
 
         {{-- feature cards --}}
-        <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px w-full max-w-6xl border border-white/5 rounded-2xl overflow-hidden">
+        <div class="relative mb-5 md:mb-30 z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px w-full max-w-6xl border border-white/5 rounded-2xl overflow-hidden">
 
             {{-- Card 1 --}}
             <div class="group bg-[#030a05] hover:bg-[#061209] transition-colors duration-300 p-8 flex flex-col gap-4 border-r border-white/5">
@@ -461,10 +461,9 @@
 
         </div>
     </section>
-
     {{-- FEATURE HIGHLIGHT --}}
     <section class="w-full flex items-center justify-center bg-black pb-24 px-4">
-        <div class="w-full max-w-6xl border border-white/5 rounded-2xl overflow-hidden relative">
+        <div class="w-full md:mt-30 mt-5 mb-5 md:mb-30 max-w-6xl border border-white/5 rounded-2xl overflow-hidden relative">
 
             {{-- top border glow --}}
             <div class="absolute top-0 left-1/2 -translate-x-1/2 h-px w-3/4 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
@@ -621,6 +620,149 @@
 
                 </div>
             </div>
+        </div>
+    </section>
+    {{-- HOW DOES IT WORK --}}
+    <section class="w-full flex flex-col items-center justify-center py-24 px-4 bg-black relative overflow-hidden">
+
+        {{-- subtle grid bg --}}
+        <div class="absolute inset-0 pointer-events-none"
+            style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px;">
+        </div>
+
+        {{-- Heading --}}
+         <div class="relative z-10 text-center max-w-2xl mb-16">
+            <h2 class="text-white text-4xl md:text-5xl font-bold mb-4">How does it Work?</h2>
+            <p class="text-gray-400 text-base md:text-lg leading-relaxed">
+                Finding your next favourite artist takes seconds. Here's how SimilArt maps your music taste into a world of discovery.
+            </p>
+        </div>
+
+        {{-- Steps --}}
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+
+            {{-- Step 1 --}}
+            <div class="relative rounded-2xl overflow-hidden border border-white/5 flex flex-col"
+                style="background: linear-gradient(160deg, #061a0c 0%, #020d04 100%);">
+
+                {{-- top glow --}}
+                <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500/40 to-transparent"></div>
+
+                {{-- step number --}}
+                <div class="absolute top-4 left-4 w-7 h-7 rounded-full border border-white/20 flex items-center justify-center">
+                    <span class="text-white text-xs font-semibold">1</span>
+                </div>
+
+                {{-- mock UI --}}
+                <div class="px-6 pt-14 pb-4">
+                    <div class="rounded-xl border border-white/5 bg-black/30 p-4 backdrop-blur-sm">
+                        <p class="text-white text-xs font-semibold mb-4">Search for an Artist</p>
+                        <div class="mb-3">
+                            <p class="text-gray-500 text-[10px] mb-1">Artist name</p>
+                            <div class="rounded-full border border-white/10 bg-black/20 px-3 py-1.5 flex items-center gap-2">
+                                <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                                </svg>
+                                <span class="text-gray-600 text-[11px]">e.g. Drake, Taylor Swift...</span>
+                            </div>
+                        </div>
+                        <button class="w-full rounded-full bg-green-600/80 text-white text-[11px] font-medium py-1.5 mt-1">
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                {{-- text --}}
+                <div class="px-6 py-5 mt-auto">
+                    <p class="text-white text-sm font-semibold mb-1">Search any artist</p>
+                    <p class="text-gray-500 text-xs leading-relaxed">Type in any artist you love and SimilArt will instantly find them from our database.</p>
+                </div>
+            </div>
+
+            {{-- Step 2 --}}
+            <div class="relative rounded-2xl overflow-hidden border border-white/5 flex flex-col"
+                style="background: linear-gradient(160deg, #061a0c 0%, #020d04 100%);">
+
+                <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500/40 to-transparent"></div>
+
+                <div class="absolute top-4 left-4 w-7 h-7 rounded-full border border-white/20 flex items-center justify-center">
+                    <span class="text-white text-xs font-semibold">2</span>
+                </div>
+
+                {{-- mock UI --}}
+                <div class="px-6 pt-14 pb-4">
+                    <div class="rounded-xl border border-white/5 bg-black/30 p-4 backdrop-blur-sm">
+                        <p class="text-white text-xs font-semibold mb-4">Artist Profile</p>
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-700 border-2 border-green-500 overflow-hidden flex-shrink-0">
+                                <img src="https://i.pravatar.cc/40?img=47" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <div>
+                                <p class="text-white text-xs font-semibold">Drake</p>
+                                <p class="text-gray-500 text-[10px]">Hip-Hop | Rap</p>
+                            </div>
+                            <div class="ml-auto w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
+                                <svg class="w-3 h-3 fill-black ml-0.5" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <div class="h-1.5 rounded-full bg-white/5 w-full"></div>
+                            <div class="h-1.5 rounded-full bg-white/5 w-4/5"></div>
+                            <div class="h-1.5 rounded-full bg-white/5 w-3/5"></div>
+                        </div>
+                        <div class="flex gap-2 mt-3">
+                            <div class="flex-1 rounded-lg border border-white/5 bg-black/20 py-1.5 flex items-center justify-center">
+                                <span class="text-gray-500 text-[10px]">Deezer</span>
+                            </div>
+                            <div class="flex-1 rounded-lg border border-white/5 bg-black/20 py-1.5 flex items-center justify-center">
+                                <span class="text-gray-500 text-[10px]">Apple Music</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 py-5 mt-auto">
+                    <p class="text-white text-sm font-semibold mb-1">Explore their profile</p>
+                    <p class="text-gray-500 text-xs leading-relaxed">See their bio, listener count, genre tags, and jump straight to streaming platforms.</p>
+                </div>
+            </div>
+
+            {{-- Step 3 --}}
+            <div class="relative rounded-2xl overflow-hidden border border-white/5 flex flex-col"
+                style="background: linear-gradient(160deg, #061a0c 0%, #020d04 100%);">
+
+                <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500/40 to-transparent"></div>
+
+                <div class="absolute top-4 left-4 w-7 h-7 rounded-full border border-white/20 flex items-center justify-center">
+                    <span class="text-white text-xs font-semibold">3</span>
+                </div>
+
+                {{-- mock UI --}}
+                <div class="px-6 pt-14 pb-4">
+                    <div class="rounded-xl border border-white/5 bg-black/30 p-4 backdrop-blur-sm">
+                        <p class="text-white text-xs font-semibold mb-4">Similar Artists</p>
+                        <div class="flex flex-wrap gap-2">
+                            @foreach (['The Weeknd', 'J. Cole', 'Travis Scott', 'Future', '21 Savage', 'Lil Baby'] as $a)
+                            <div class="flex items-center gap-1.5 px-2 py-1 rounded-full bg-black/20 border border-white/5">
+                                <div class="w-5 h-5 rounded-full bg-gray-700 overflow-hidden border border-green-500/30">
+                                    <img src="https://i.pravatar.cc/20?img={{ $loop->index + 5 }}" class="w-full h-full object-cover" alt="{{ $a }}" />
+                                </div>
+                                <span class="text-white text-[10px] font-medium">{{ $a }}</span>
+                            </div>
+                            @endforeach
+                        </div>
+                        <p class="text-gray-600 text-[10px] mt-3">Click any artist to explore their world →</p>
+                    </div>
+                </div>
+
+                <div class="px-6 py-5 mt-auto">
+                    <p class="text-white text-sm font-semibold mb-1">Discover similar artists</p>
+                    <p class="text-gray-500 text-xs leading-relaxed">SimilArt surfaces artists with the same sonic DNA. Click any of them to keep exploring endlessly.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
