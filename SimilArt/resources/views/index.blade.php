@@ -117,18 +117,25 @@
             <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 md:space-x-4">
 
 
-                <form class="w-full max-w-xl">
-                    <label for="search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
-                            </svg>
+                <div class="relative z-10 w-full max-w-2xl flex justify-center mb-10 px-8">
+                    <form class="w-full" onsubmit="searchArtist(event)">
+                        <label for="artist-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                                </svg>
+                            </div>
+                            <input type="search" id="artist-search"
+                                class="block w-full p-3 ps-9 bg-transparent border border-gray-500 text-white text-sm rounded-full focus:ring-green-600 focus:border-green-600 focus:shadow-[0_0_20px_rgba(16,185,80,0.4)] shadow-xs placeholder:text-gray-400 transition-shadow duration-300"
+                                placeholder="Search for an artist" />
+                            <button type="submit"
+                                class="absolute end-1.5 top-1/2 -translate-y-1/2 text-black bg-green-600 hover:bg-green-500 transition-all duration-300 font-medium rounded-full text-xs px-4 py-1.5">
+                                Search
+                            </button>
                         </div>
-                        <input type="search" id="search" class="block backdrop-blur-4xl w-full p-3 ps-9 bg-transparent border border-gray-500 text-gray text-sm rounded-full focus:ring-green-600 focus:border-green-600 focus:shadow-[0_0_20px_rgba(16,185,80,0.4)] shadow-xs placeholder:text-gray-400 transition-shadow duration-300" placeholder="Search for an artist" required />
-                        <!-- <button type="button" class="absolute end-1.5 bottom-1.5 text-black bg-green-600 hover:bg-green-600 transition-all duration-300 border border-transparent focus:ring-4 focus:ring-green-300 shadow-xs font-medium leading-5 rounded-full text-xs px-3 py-1.5 focus:outline-none">Go</button> -->
-                    </div>
-                </form>
+                    </form>
+                </div>
 
 
             </div>
@@ -139,7 +146,6 @@
         </div>
     </section>
     <!-- ARTISTS -->
-    <!-- ARTISTS -->
     <section class="w-full flex items-center justify-center">
         <div class="w-full rounded-lg py-20 bg-[#000A04] max-w-7xl relative overflow-hidden">
 
@@ -149,27 +155,6 @@
             {{-- Top glow --}}
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-30 pointer-events-none"
                 style="background: radial-gradient(ellipse at top, rgba(200,255,220,0.35) 0%, rgba(16,185,80,0.2) 30%, rgba(16,185,80,0.06) 60%, transparent 75%); filter: blur(20px);">
-            </div>
-
-            {{-- Search Bar --}}
-            <div class="relative z-10 flex justify-center mb-10 px-8">
-                <form class="w-full max-w-xl" onsubmit="searchArtist(event)">
-                    <label for="artist-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
-                            </svg>
-                        </div>
-                        <input type="search" id="artist-search"
-                            class="block w-full p-3 ps-9 bg-transparent border border-gray-500 text-white text-sm rounded-full focus:ring-green-600 focus:border-green-600 focus:shadow-[0_0_20px_rgba(16,185,80,0.4)] shadow-xs placeholder:text-gray-400 transition-shadow duration-300"
-                            placeholder="Search for an artist" />
-                        <button type="submit"
-                            class="absolute end-1.5 top-1/2 -translate-y-1/2 text-black bg-green-600 hover:bg-green-500 transition-all duration-300 font-medium rounded-full text-xs px-4 py-1.5">
-                            Search
-                        </button>
-                    </div>
-                </form>
             </div>
 
             {{-- Main content --}}
@@ -229,9 +214,25 @@
                     </div>
 
                     {{-- Loading state --}}
-                    <div id="artist-loading" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl p-8 hidden flex flex-col items-center justify-center min-h-[300px]">
-                        <div class="w-8 h-8 border-2 border-green-500 border-t-transparent rounded-full animate-spin"></div>
-                        <p class="text-gray-500 text-sm mt-3">Searching...</p>
+                    {{-- Loading state --}}
+                    <div id="artist-loading" class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl hidden p-5">
+                        {{-- Avatar skeleton --}}
+                        <div class="flex justify-center mt-5 mb-4">
+                            <div class="w-24 h-24 rounded-full skeleton"></div>
+                        </div>
+                        {{-- Name --}}
+                        <div class="skeleton h-5 w-3/4 mx-auto rounded-full mb-2"></div>
+                        {{-- Tags --}}
+                        <div class="skeleton h-3 w-2/3 mx-auto rounded-full mb-1"></div>
+                        {{-- Listeners --}}
+                        <div class="skeleton h-3 w-1/2 mx-auto rounded-full mb-4"></div>
+                        {{-- Bio lines --}}
+                        <div class="skeleton h-2.5 w-full rounded-full mb-1.5"></div>
+                        <div class="skeleton h-2.5 w-5/6 rounded-full mb-1.5"></div>
+                        <div class="skeleton h-2.5 w-4/6 rounded-full mb-6"></div>
+                        {{-- Buttons --}}
+                        <div class="skeleton h-10 w-full rounded-none mb-0"></div>
+                        <div class="skeleton h-10 w-full rounded-none"></div>
                     </div>
 
                 </div>
@@ -256,6 +257,62 @@
     </section>
 
     <style>
+        .artist-float img {
+            transition: box-shadow 0.3s ease;
+        }
+
+        .artist-float:hover img {
+            box-shadow: 0 0 20px rgba(16, 185, 80, 0.7), 0 0 40px rgba(16, 185, 80, 0.3);
+        }
+
+        .artist-float span {
+            transition: color 0.3s ease;
+        }
+
+        .artist-float:hover span {
+            color: #4ade80;
+        }
+
+        /* Skeleton shimmer */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 25%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.04) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Artist bubble pop in */
+        @keyframes popIn {
+            0% {
+                transform: scale(0) translateY(10px);
+                opacity: 0;
+            }
+
+            70% {
+                transform: scale(1.1) translateY(-3px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .artist-float {
+            opacity: 0;
+            animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
         @keyframes float1 {
 
             0%,
@@ -328,6 +385,9 @@
     </style>
 
     <script>
+        // Show skeleton immediately on page load before JS runs
+        document.getElementById('artist-loading').classList.remove('hidden');
+        document.getElementById('artist-empty').classList.add('hidden');
         const LASTFM_API_KEY = '9b63fe91f80052b4d121950664d7df8b';
         const LASTFM_BASE = 'https://ws.audioscrobbler.com/2.0/';
 
@@ -588,10 +648,8 @@
                 };
                 const size = sizes[i % sizes.length];
 
-                // Image — Deezer provides it directly, or fallback
+                // Image
                 let imgUrl = a.picture_medium || a.picture || `https://i.pravatar.cc/64?img=${10 + i}`;
-
-                // If it came from Last.fm fallback, fetch from Deezer
                 if (!isDeezer && a.name) {
                     try {
                         const sp = await searchDeezerArtist(a.name);
@@ -606,19 +664,27 @@
                 <span class="text-white text-xs font-medium text-center">${a.name}</span>
             `;
 
-                // Mobile
+                // Mobile bubble
                 const mobileBubble = document.createElement('div');
                 mobileBubble.className = 'artist-float flex flex-col items-center gap-1';
-                mobileBubble.style.animation = `${anim} ${dur}s ease-in-out infinite ${delay}s`;
                 mobileBubble.innerHTML = bubbleHTML;
+                const mobileDelay = (i * 0.12 + Math.random() * 0.15).toFixed(2);
+                mobileBubble.style.cssText = `opacity: 0; animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${mobileDelay}s forwards;`;
+                mobileBubble.addEventListener('animationend', () => {
+                    mobileBubble.style.cssText = `opacity: 1; animation: ${anim} ${dur}s ease-in-out infinite ${delay}s;`;
+                });
                 mobileBubble.addEventListener('click', () => loadArtist(a.name));
                 mobileContainer.appendChild(mobileBubble);
 
-                // Desktop
+                // Desktop bubble
                 const desktopBubble = document.createElement('div');
                 desktopBubble.className = 'artist-float absolute flex flex-col items-center gap-1';
-                desktopBubble.style.cssText = `top: ${pos.top}; left: ${pos.left}; animation: ${anim} ${dur}s ease-in-out infinite ${delay}s;`;
                 desktopBubble.innerHTML = bubbleHTML;
+                const desktopDelay = (i * 0.1 + Math.random() * 0.2).toFixed(2);
+                desktopBubble.style.cssText = `top: ${pos.top}; left: ${pos.left}; opacity: 0; animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${desktopDelay}s forwards;`;
+                desktopBubble.addEventListener('animationend', () => {
+                    desktopBubble.style.cssText = `top: ${pos.top}; left: ${pos.left}; opacity: 1; animation: ${anim} ${dur}s ease-in-out infinite ${delay}s;`;
+                });
                 desktopBubble.addEventListener('click', () => loadArtist(a.name));
                 desktopContainer.appendChild(desktopBubble);
             }
@@ -640,72 +706,13 @@
             document.getElementById('artist-card').classList.add('hidden');
             document.getElementById('artist-empty').classList.remove('hidden');
         }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const popular = ['Taylor Swift', 'Drake', 'The Weeknd', 'Billie Eilish', 'Kendrick Lamar', 'Bad Bunny'];
+            const random = popular[Math.floor(Math.random() * popular.length)];
+            await loadArtist(random);
+        });
     </script>
-
-    <style>
-        @keyframes float1 {
-
-            0%,
-            100% {
-                transform: translateY(0) translateX(0);
-            }
-
-            33% {
-                transform: translateY(-10px) translateX(4px);
-            }
-
-            66% {
-                transform: translateY(6px) translateX(-4px);
-            }
-        }
-
-        @keyframes float2 {
-
-            0%,
-            100% {
-                transform: translateY(0) translateX(0);
-            }
-
-            33% {
-                transform: translateY(8px) translateX(-5px);
-            }
-
-            66% {
-                transform: translateY(-8px) translateX(5px);
-            }
-        }
-
-        @keyframes float3 {
-
-            0%,
-            100% {
-                transform: translateY(0) translateX(0);
-            }
-
-            25% {
-                transform: translateY(-8px) translateX(6px);
-            }
-
-            75% {
-                transform: translateY(8px) translateX(-3px);
-            }
-        }
-
-        .artist-float {
-            transition: transform 0.2s ease;
-            will-change: transform;
-            cursor: pointer;
-        }
-
-        .artist-float:hover {
-            transform: scale(1.12) !important;
-            animation-play-state: paused;
-        }
-
-        .artist-float:hover img {
-            box-shadow: 0 0 16px rgba(16, 185, 80, 0.5);
-        }
-    </style>
 
 </body>
 
