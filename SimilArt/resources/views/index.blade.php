@@ -140,39 +140,284 @@
     </section>
     <!-- ARTISTS -->
     <section class="w-full flex items-center justify-center">
-        <div class="w-full rounded-lg p-20 self-center bg-[#000A04] h-100 max-w-7xl relative">
+        <div class="w-full rounded-lg py-20 bg-[#000A04] max-w-7xl relative overflow-hidden">
+
+            {{-- Top border --}}
             <div class="absolute top-0 left-1/2 -translate-x-1/2 h-0.5 w-full bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+
             {{-- Top glow --}}
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-30 pointer-events-none"
                 style="background: radial-gradient(ellipse at top, rgba(200,255,220,0.35) 0%, rgba(16,185,80,0.2) 30%, rgba(16,185,80,0.06) 60%, transparent 75%); filter: blur(20px);">
             </div>
 
-            <div class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md max-w-[300px] w-full border-[0.1px] border-[#323232] rounded-3xl">
-                <button id="dropdownButton" data-dropdown-toggle="dropdown" class="absolute top-2 end-2 text-body hover:text-heading bg-green-600 box-border border border-transparent hover:bg-neutral-tertiary focus:ring-4 focus:ring-neutral-tertiary rounded-full mt-5 mr-5 p-1.5 focus:outline-none" type="button">
-                    <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-width="3" d="M6 12h.01m6 0h.01m5.99 0h.01" />
-                    </svg>
-                </button>
-                <div class="flex flex-col gap-1 items-center">
-                    <div class="w-24 h-24 mb-6 mt-5 bg-white rounded-full"></div>
-                    <h5 class="mb-0.5 text-2xl font-regular tracking-tight text-white">Bonnie Green</h5>
-                    <span class="text-sm text-gray-300">RnB | Hip Hop | Rap</span>
-                    <span class="text-sm text-gray-300">#10 in the world</span>
-                    <span class="text-sm text-gray-300">20,000,456 monthly listeners</span>
-                    <div class="flex overflow-hidden mt-4 md:mt-6 flex-col w-full">
-                        <a type="button" class="inline-flex justify-center items-center text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-md text-center p-4">
-                            Listen on Spotify
-                        </a>
-                        <a type="button" class="inline-flex overflow-hidden justify-center items-center text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-md text-center p-4">
-                            Listen on Apple music
-                        </a>
+            <div class="relative flex flex-col md:flex-row items-center md:items-start gap-8 px-8">
+
+                {{-- Left: Artist Card --}}
+                <div class="flex-shrink-0 w-full max-w-[300px]">
+                    <div class="relative bg-[rgba(102,102,102,0.1)] backdrop-blur-md w-full border-[0.1px] border-[#323232] rounded-3xl">
+                        <button id="dropdownButton" data-dropdown-toggle="dropdown"
+                            class="absolute top-2 end-2 text-body hover:text-heading bg-green-600 box-border border border-transparent cursor-pointer hover:ring-4 hover:ring-green-300 transition-all duration-300 rounded-full mt-5 mr-5 p-1.5 focus:outline-none"
+                            type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-black" viewBox="0 -960 960 960">
+                                <path d="M320-200v-560l440 280-440 280Z" />
+                            </svg>
+                        </button>
+                        <div class="flex flex-col gap-1 items-center">
+                            <div class="w-24 h-24 mb-6 mt-5 bg-white rounded-full overflow-hidden">
+                                <img src="https://i.pravatar.cc/96?img=47" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <h5 class="mb-0.5 text-2xl font-regular tracking-tight text-white">Bonnie Green</h5>
+                            <span class="text-sm text-gray-300">RnB | Hip Hop | Rap</span>
+                            <span class="text-sm text-gray-300">#10 in the world</span>
+                            <span class="text-sm text-gray-300">20,000,456 monthly listeners</span>
+                            <div class="flex overflow-hidden mt-4 md:mt-6 flex-col w-full">
+                                <a type="button" class="inline-flex justify-center items-center cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-md text-center p-4">
+                                    Listen on Spotify
+                                </a>
+                                <a type="button" class="inline-flex overflow-hidden justify-center cursor-pointer items-center text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-md text-center p-4">
+                                    Listen on Apple Music
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                {{-- Right: Floating Artists --}}
+                <div class="relative flex-1 w-full">
+
+                    {{-- Mobile: grid layout --}}
+                    <div class="grid grid-cols-3 gap-6 place-items-center md:hidden py-4">
+                        <div class="artist-float flex flex-col items-center gap-1" style="animation: float1 6s ease-in-out infinite;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/56?img=11" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Drake</span>
+                        </div>
+                        <div class="artist-float flex flex-col items-center gap-1" style="animation: float2 7s ease-in-out infinite;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/64?img=12" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Kendrick</span>
+                        </div>
+                        <div class="artist-float flex flex-col items-center gap-1" style="animation: float3 5.5s ease-in-out infinite;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/48?img=13" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Travis</span>
+                        </div>
+                        <div class="artist-float flex flex-col items-center gap-1" style="animation: float2 8s ease-in-out infinite 1s;">
+                            <div class="w-14 h-14 rounded-full border border-green-500/40 overflow-hidden">
+                                <img src="https://i.pravatar.cc/64?img=14" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">The Weeknd</span>
+                        </div>
+                        <div class="artist-float flex flex-col items-center gap-1" style="animation: float1 6.5s ease-in-out infinite 0.5s;">
+                            <div class="w-14 h-14 rounded-full border-2 border-green-500/60 overflow-hidden">
+                                <img src="https://i.pravatar.cc/80?img=15" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">J. Cole</span>
+                        </div>
+                        <div class="artist-float flex flex-col items-center gap-1" style="animation: float3 7.5s ease-in-out infinite 1.5s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/56?img=16" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Future</span>
+                        </div>
+                        <div class="artist-float flex flex-col items-center gap-1" style="animation: float1 7s ease-in-out infinite 2s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/48?img=17" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Lil Baby</span>
+                        </div>
+                        <div class="artist-float flex flex-col items-center gap-1" style="animation: float2 6s ease-in-out infinite 0.8s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/64?img=18" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">21 Savage</span>
+                        </div>
+                        <div class="artist-float flex flex-col items-center gap-1" style="animation: float3 5s ease-in-out infinite 1.2s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/48?img=19" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Gunna</span>
+                        </div>
+                        <div class="artist-float flex flex-col items-center gap-1" style="animation: float1 7s ease-in-out infinite 2s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/48?img=17" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Lil Baby</span>
+                        </div>
+                        <div class="artist-float flex flex-col items-center gap-1" style="animation: float2 6s ease-in-out infinite 0.8s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/64?img=18" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">21 Savage</span>
+                        </div>
+                        <div class="artist-float flex flex-col items-center gap-1" style="animation: float3 5s ease-in-out infinite 1.2s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/48?img=19" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Gunna</span>
+                        </div>
+                    </div>
+
+                    {{-- Desktop: absolute floating --}}
+                    <div class="hidden md:block relative h-[400px]">
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 5%; left: 15%; animation: float1 6s ease-in-out infinite;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/56?img=11" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Drake</span>
+                        </div>
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 10%; left: 50%; animation: float2 7s ease-in-out infinite;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/64?img=12" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Kendrick</span>
+                        </div>
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 5%; left: 75%; animation: float3 5.5s ease-in-out infinite;">
+                            <div class="w-12 h-12 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/48?img=13" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Travis</span>
+                        </div>
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 40%; left: 10%; animation: float2 8s ease-in-out infinite 1s;">
+                            <div class="w-16 h-16 rounded-full border border-green-500/40 overflow-hidden">
+                                <img src="https://i.pravatar.cc/64?img=14" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">The Weeknd</span>
+                        </div>
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 35%; left: 40%; animation: float1 6.5s ease-in-out infinite 0.5s;">
+                            <div class="w-20 h-20 rounded-full border-2 border-green-500/60 overflow-hidden">
+                                <img src="https://i.pravatar.cc/80?img=15" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">J. Cole</span>
+                        </div>
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 30%; left: 70%; animation: float3 7.5s ease-in-out infinite 1.5s;">
+                            <div class="w-14 h-14 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/56?img=16" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Future</span>
+                        </div>
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 65%; left: 20%; animation: float1 7s ease-in-out infinite 2s;">
+                            <div class="w-12 h-12 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/48?img=17" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Lil Baby</span>
+                        </div>
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 75%; left: 35%; animation: float1 7s ease-in-out infinite 2s;">
+                            <div class="w-12 h-12 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/48?img=17" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Lil Baby</span>
+                        </div>
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 65%; left: 55%; animation: float2 6s ease-in-out infinite 0.8s;">
+                            <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/64?img=18" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">21 Savage</span>
+                        </div>
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 68%; left: 80%; animation: float3 5s ease-in-out infinite 1.2s;">
+                            <div class="w-12 h-12 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/48?img=19" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Gunna</span>
+                        </div>
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 65%; left: 55%; animation: float2 6s ease-in-out infinite 0.8s;">
+                            <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/64?img=18" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">21 Savage</span>
+                        </div>
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 68%; left: 80%; animation: float3 5s ease-in-out infinite 1.2s;">
+                            <div class="w-12 h-12 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/48?img=19" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Gunna</span>
+                        </div>
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 25%; left: 25%; animation: float2 6s ease-in-out infinite 0.8s;">
+                            <div class="w-16 h-16 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/64?img=18" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">21 Savage</span>
+                        </div>
+                        <div class="artist-float absolute flex flex-col items-center gap-1" style="top: 47%; left: 60%; animation: float3 5s ease-in-out infinite 1.2s;">
+                            <div class="w-12 h-12 rounded-full border border-white/20 overflow-hidden">
+                                <img src="https://i.pravatar.cc/48?img=19" class="w-full h-full object-cover" alt="artist" />
+                            </div>
+                            <span class="text-white text-xs font-medium">Gunna</span>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-
         </div>
-
     </section>
+
+    <style>
+        @keyframes float1 {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            33% {
+                transform: translateY(-10px) translateX(4px);
+            }
+
+            66% {
+                transform: translateY(6px) translateX(-4px);
+            }
+        }
+
+        @keyframes float2 {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            33% {
+                transform: translateY(8px) translateX(-5px);
+            }
+
+            66% {
+                transform: translateY(-8px) translateX(5px);
+            }
+        }
+
+        @keyframes float3 {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            25% {
+                transform: translateY(-8px) translateX(6px);
+            }
+
+            75% {
+                transform: translateY(8px) translateX(-3px);
+            }
+        }
+
+        .artist-float {
+            transition: transform 0.2s ease;
+            will-change: transform;
+            cursor: pointer;
+        }
+
+        .artist-float:hover {
+            transform: scale(1.12) !important;
+            animation-play-state: paused;
+        }
+
+        .artist-float:hover img {
+            box-shadow: 0 0 16px rgba(16, 185, 80, 0.5);
+        }
+    </style>
 
 </body>
 
