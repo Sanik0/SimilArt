@@ -5,8 +5,18 @@
 SimilArt is a music artist discovery web app that lets you search for any artist and instantly see who sounds just like them. Powered by Last.fm and Deezer APIs, SimilArt maps out an artist's sonic neighbors so you can explore endlessly, one click at a time.
 
 🔗 **Live Site:** [similart.vercel.app](https://similart.vercel.app)
-https://similart-mpo3ubmex-ronan-sanicos-projects.vercel.app/
 ---
+
+## Screenshots
+
+### Home 
+![Homepage](SimilArt/screenshots/home.png)
+
+### Home mobile
+![Article Page](SimilArt/screenshots/homemobile.png)
+
+### Search Section
+![Quiz Page](SimilArt/screenshots/search.png)
 
 ## ✨ Features
 
