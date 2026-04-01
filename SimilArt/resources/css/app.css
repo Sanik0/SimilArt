@@ -13,6 +13,10 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .artist-default {
     cursor: pointer;
     opacity: 1;

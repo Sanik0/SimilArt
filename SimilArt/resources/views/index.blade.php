@@ -110,14 +110,14 @@
         </div>
     </nav>
     {{-- JUMBOTRON --}}
-    <section style="background: linear-gradient(to top, #000A04, #000000);" class=" mt-30 relative overflow-hidden pb-10 md:pb-15">
+    <section id="quickstart" style="background: linear-gradient(to top, #000A04, #000000);" class=" mt-30 relative overflow-hidden pb-10 md:pb-15">
         <div class="py-8 px-4 mx-auto max-w-screen-2xl text-center lg:py-16">
-            <h1 class="mb-6 text-4xl font-medium tracking-tighter text-white md:text-5xl lg:text-6xl">Disover New Artists <br>With Just a Click</h1>
-            <p class="mb-8 text-base font-normal text-gray-300 md:text-xl">Here at Flowbite we focus on markets where technology, innovation, <br> and capital can unlock long-term value and drive economic growth.</p>
+            <h1 class="mb-6 text-4xl font-medium tracking-tighter text-white md:text-5xl lg:text-6xl">Discover New Artists <br>With Just a Click</h1>
+            <p class="mb-8 text-base inline-flex justify-center font-normal text-gray-300 md:text-xl max-w-2xl text-center">Search any artist you love and SimilArt instantly maps out who sounds just like them — explore endlessly, one click at a time.</p>
             <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 md:space-x-4">
 
 
-                <div class="relative z-10 w-full max-w-2xl flex justify-center mb-10 px-8">
+                <div class="relative z-10 w-full max-w-xl flex justify-center mb-10 px-3">
                     <form class="w-full" onsubmit="searchArtist(event)">
                         <label for="artist-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div class="relative">
@@ -307,7 +307,7 @@
                                 <span class="text-white text-xs font-medium">Future</span>
                             </div>
                             <div onclick="loadArtist('Travis Scott')" class="artist-default flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; animation: float2 6.5s ease-in-out infinite 0.5s;">
-                                <div class="w-18 h-18 rounded-full border-2 border-green-500/60 overflow-hidden bg-gray-800">
+                                <div class="w-18 h-18 rounded-full border-2 overflow-hidden bg-gray-800">
                                     <img src="/artists/travisscott.jpg" class="w-full h-full object-cover rounded-full" alt="Travis Scott" />
                                 </div>
                                 <span class="text-white text-xs font-medium">Travis Scott</span>
@@ -383,7 +383,7 @@
                                 <span class="text-white text-xs font-medium">Future</span>
                             </div>
                             <div onclick="loadArtist('Travis Scott')" class="artist-default absolute flex flex-col items-center gap-1 cursor-pointer" style="opacity: 1; top: 35%; left: 40%; animation: float1 6.5s ease-in-out infinite 0.5s;">
-                                <div class="w-20 h-20 rounded-full border-2 border-green-500/60 overflow-hidden bg-gray-800">
+                                <div class="w-20 h-20 rounded-full border-2  overflow-hidden bg-gray-800">
                                     <img src="/artists/travisscott.jpg" class="w-full h-full object-cover rounded-full" alt="Travis Scott" />
                                 </div>
                                 <span class="text-white text-xs font-medium">Travis Scott</span>
@@ -439,7 +439,7 @@
         </div>
     </section>
     {{-- WHY CHOOSE SIMILART --}}
-    <section class="w-full flex flex-col items-center justify-center py-24 px-4 bg-black relative overflow-hidden">
+    <section id="why" class="w-full flex flex-col items-center justify-center py-24 px-4 bg-black relative overflow-hidden">
 
         {{-- subtle grid bg --}}
         <div class="absolute inset-0 pointer-events-none"
@@ -620,7 +620,7 @@
     </section>
 
     {{-- HOW DOES IT WORK --}}
-    <section class="w-full flex flex-col items-start justify-center py-16 px-4 bg-black relative overflow-hidden">
+    <section id="how" class="w-full flex flex-col items-start justify-center py-16 px-4 bg-black relative overflow-hidden">
 
         <div class="absolute inset-0 pointer-events-none"
             style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px;">
@@ -739,7 +739,7 @@
         </div>
     </section>
     {{-- TESTIMONIALS --}}
-    <section class="w-full flex flex-col items-center justify-center bg-black px-4 py-0">
+    <section id="testimonials" class="w-full flex flex-col items-center justify-center bg-black px-4 py-0">
         <div class="w-full max-w-6xl mx-auto">
 
             <div class="w-full h-px bg-white/10"></div>
@@ -800,7 +800,7 @@
         </div>
     </section>
     {{-- FAQ --}}
-    <section class="w-full flex flex-col items-center justify-center bg-black px-4 py-0">
+    <section id="faq" class="w-full flex flex-col items-center justify-center bg-black px-4 py-0">
         <div class="w-full max-w-6xl mx-auto">
 
             <div class="w-full h-px bg-white/10"></div>
