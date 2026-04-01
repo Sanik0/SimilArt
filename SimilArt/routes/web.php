@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use Illuminate\Support\Facades\Http;
 
 Route::get('index', function () {
@@ -12,7 +11,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/api/deezer/search', function () {
+Route::get('/app/deezer/search', function () {
     $query = request('q');
     $response = \Illuminate\Support\Facades\Http::get('https://api.deezer.com/search/artist', [
         'q' => $query,
@@ -21,7 +20,7 @@ Route::get('/api/deezer/search', function () {
     return response()->json($response->json());
 });
 
-Route::get('/api/lastfm/artist', function () {
+Route::get('/app/lastfm/artist', function () {
     $artist = request('artist');
     $response = \Illuminate\Support\Facades\Http::get('https://ws.audioscrobbler.com/2.0/', [
         'method'  => 'artist.getinfo',
@@ -32,7 +31,7 @@ Route::get('/api/lastfm/artist', function () {
     return response()->json($response->json());
 });
 
-Route::get('/api/lastfm/similar', function () {
+Route::get('/app/lastfm/similar', function () {
     $artist = request('artist');
     $response = \Illuminate\Support\Facades\Http::get('https://ws.audioscrobbler.com/2.0/', [
         'method'  => 'artist.getsimilar',
@@ -44,19 +43,19 @@ Route::get('/api/lastfm/similar', function () {
     return response()->json($response->json());
 });
 
-Route::get('/api/deezer/top-track', function () {
+Route::get('/app/deezer/top-track', function () {
     $id = request('id');
     $response = \Illuminate\Support\Facades\Http::get("https://api.deezer.com/artist/{$id}/top?limit=5");
     return response()->json($response->json());
 });
 
-Route::get('/api/deezer/artist', function () {
+Route::get('/app/deezer/artist', function () {
     $id = request('id');
     $response = \Illuminate\Support\Facades\Http::get("https://api.deezer.com/artist/{$id}");
     return response()->json($response->json());
 });
 
-Route::get('/api/deezer/similar', function () {
+Route::get('/app/deezer/similar', function () {
     $id = request('id');
     $response = \Illuminate\Support\Facades\Http::get("https://api.deezer.com/artist/{$id}/related?limit=12");
     return response()->json($response->json());

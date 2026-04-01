@@ -124,19 +124,19 @@ const sizes = ['w-12 h-12', 'w-14 h-14', 'w-16 h-16', 'w-20 h-20'];
 
 // --- Deezer ---
 async function searchDeezerArtist(name) {
-    const res = await fetch(`/api/deezer/search?q=${encodeURIComponent(name)}`);
+    const res = await fetch(`/app/deezer/search?q=${encodeURIComponent(name)}`);
     const data = await res.json();
     return data.data?.[0] || null;
 }
 
 async function getDeezerTopTrack(artistId) {
-    const res = await fetch(`/api/deezer/top-track?id=${artistId}`);
+    const res = await fetch(`/app/deezer/top-track?id=${artistId}`);
     const data = await res.json();
     return data.data?.find(t => t.preview) || null;
 }
 
 async function getDeezerSimilar(artistId) {
-    const res = await fetch(`/api/deezer/similar?id=${artistId}`);
+    const res = await fetch(`/app/deezer/similar?id=${artistId}`);
     const data = await res.json();
     return data.data || [];
 }
@@ -155,7 +155,7 @@ async function loadArtist(name) {
 
     try {
         const [infoRes, deezerArtist] = await Promise.all([
-            fetch(`/api/lastfm/artist?artist=${encodeURIComponent(name)}`),
+            fetch(`/app/lastfm/artist?artist=${encodeURIComponent(name)}`),
             searchDeezerArtist(name)
         ]);
 
@@ -166,7 +166,7 @@ async function loadArtist(name) {
         if (deezerArtist?.id) {
             similarArtists = await getDeezerSimilar(deezerArtist.id);
         } else {
-            const similarRes = await fetch(`/api/lastfm/similar?artist=${encodeURIComponent(name)}`);
+            const similarRes = await fetch(`/app/lastfm/similar?artist=${encodeURIComponent(name)}`);
             const similarData = await similarRes.json();
             similarArtists = (similarData.similarartists?.artist || []).map(a => ({
                 name: a.name,

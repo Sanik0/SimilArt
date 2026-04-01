@@ -13,8 +13,24 @@
     ],
     "routes": [
         {
+            "src": "/api/(.*)",
+            "dest": "/api/index.php"
+        },
+        {
+            "src": "/build/assets/(.*)",
+            "dest": "/public/build/assets/$1"
+        },
+        {
             "src": "/build/(.*)",
             "dest": "/public/build/$1"
+        },
+        {
+            "src": "/artists/(.*)",
+            "dest": "/public/artists/$1"
+        },
+        {
+            "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))",
+            "dest": "/public/$1"
         },
         {
             "src": "/(.*)",
