@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960'><path fill='%2343A047' d='M508.5-668.5Q520-657 520-640v480q0 17-11.5 28.5T480-120q-17 0-28.5-11.5T440-160v-480q0-17 11.5-28.5T480-680q17 0 28.5 11.5Zm-160 120Q360-537 360-520v240q0 17-11.5 28.5T320-240q-17 0-28.5-11.5T280-280v-240q0-17 11.5-28.5T320-560q17 0 28.5 11.5Zm320 0Q680-537 680-520v240q0 17-11.5 28.5T640-240q-17 0-28.5-11.5T600-280v-240q0-17 11.5-28.5T640-560q17 0 28.5 11.5ZM480-760q-45 0-84.5 22.5T333-676q-32 54-87.5 85T127-560h-7q-17 0-28.5-11.5T80-600q0-17 11.5-28.5T120-640h7q42 0 78.5-21t58.5-57q34-57 91.5-89.5T480-840q67 0 124.5 32.5T696-718q22 36 58.5 57t78.5 21h7q17 0 28.5 11.5T880-600q0 17-11.5 28.5T840-560h-6q-63 0-118.5-31T628-676q-23-39-62.5-61.5T480-760ZM131.5-371.5Q120-383 120-400t11.5-28.5Q143-440 160-440t28.5 11.5Q200-417 200-400t-11.5 28.5Q177-360 160-360t-28.5-11.5Zm640 0Q760-383 760-400t11.5-28.5Q783-440 800-440t28.5 11.5Q840-417 840-400t-11.5 28.5Q817-360 800-360t-28.5-11.5Z'/></svg>">
     @vite('resources/css/app.css')
     <title>
         SimilArt - Discover New Artists with Just a Click
@@ -20,13 +21,10 @@
             {{-- Logo --}}
             <a href="#" class="flex items-center space-x-2.5">
                 {{-- Play icon badge --}}
-                <div class="w-8 h-8 rounded-full flex items-center justify-center"
-                    style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
-                    <svg class="w-3.5 h-3.5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                    </svg>
-                </div>
-                <span class="text-white font-medium text-2xl tracking-tight">
+                <svg class="h-6.5 w-6.5" fill="#43A047" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                    <path d="M508.5-668.5Q520-657 520-640v480q0 17-11.5 28.5T480-120q-17 0-28.5-11.5T440-160v-480q0-17 11.5-28.5T480-680q17 0 28.5 11.5Zm-160 120Q360-537 360-520v240q0 17-11.5 28.5T320-240q-17 0-28.5-11.5T280-280v-240q0-17 11.5-28.5T320-560q17 0 28.5 11.5Zm320 0Q680-537 680-520v240q0 17-11.5 28.5T640-240q-17 0-28.5-11.5T600-280v-240q0-17 11.5-28.5T640-560q17 0 28.5 11.5ZM480-760q-45 0-84.5 22.5T333-676q-32 54-87.5 85T127-560h-7q-17 0-28.5-11.5T80-600q0-17 11.5-28.5T120-640h7q42 0 78.5-21t58.5-57q34-57 91.5-89.5T480-840q67 0 124.5 32.5T696-718q22 36 58.5 57t78.5 21h7q17 0 28.5 11.5T880-600q0 17-11.5 28.5T840-560h-6q-63 0-118.5-31T628-676q-23-39-62.5-61.5T480-760ZM131.5-371.5Q120-383 120-400t11.5-28.5Q143-440 160-440t28.5 11.5Q200-417 200-400t-11.5 28.5Q177-360 160-360t-28.5-11.5Zm640 0Q760-383 760-400t11.5-28.5Q783-440 800-440t28.5 11.5Q840-417 840-400t-11.5 28.5Q817-360 800-360t-28.5-11.5Z" />
+                </svg>
+                <span class="text-green-600 font-bold text-2xl tracking-tight">
                     SimilArt
                 </span>
             </a>
@@ -229,26 +227,26 @@
                                             <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
                                         </svg>
                                         Spotify
-                                        </a>
+                                    </a>
 
-                                        <a id="lastfm-link" href="https://www.last.fm/music/Drake" target="_blank"
-                                            class="inline-flex justify-center items-center gap-2 cursor-pointer text-white hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
-                                            {{-- Last.fm soundwave icon --}}
-                                            <svg class="w-4 h-4" fill="#ffffff" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 512 512" xml:space="preserve" stroke="#ffffff" stroke-width="0.00512">
+                                    <a id="lastfm-link" href="https://www.last.fm/music/Drake" target="_blank"
+                                        class="inline-flex justify-center items-center gap-2 cursor-pointer text-white hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
+                                        {{-- Last.fm soundwave icon --}}
+                                        <svg class="w-4 h-4" fill="#ffffff" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 512 512" xml:space="preserve" stroke="#ffffff" stroke-width="0.00512">
 
-                                                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
-                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
 
-                                                <g id="SVGRepo_iconCarrier">
-                                                    <g id="7935ec95c421cee6d86eb22ecd125006">
-                                                        <path style="display: inline;" d="M308.214,337.861l-5.663-13.064L253.93,209.107c-16.056-40.931-56.085-68.601-101.198-68.601 c-61.043,0-110.576,51.706-110.576,115.524c0,63.756,49.533,115.493,110.576,115.493c42.618,0,79.604-25.164,98.062-62.007 l19.668,47.329c-27.876,35.526-70.298,58.155-117.729,58.155C68.645,415.002,0.5,343.886,0.5,256.031 c0-87.834,68.145-159.033,152.231-159.033c63.446,0,114.696,35.361,140.741,98.093c1.946,4.865,27.516,67.255,49.834,120.369 c13.788,32.856,25.537,54.678,63.776,56.023c37.441,1.325,63.249-22.484,63.249-52.648c0-29.45-19.7-36.542-52.825-48.042 c-59.543-20.486-90.308-41.065-90.308-90.401c0-48.115,31.303-80.205,82.295-80.205c33.137,0,57.162,15.424,73.756,46.169 l-32.618,17.37c-12.235-17.909-25.765-25-42.97-25c-23.934,0-40.94,17.381-40.94,40.465c0,32.805,28.095,37.742,67.348,51.179 c52.866,17.981,77.431,38.529,77.431,89.801c0,53.86-44.232,93.093-102.006,93.01C356.256,412.942,327.861,385.769,308.214,337.861 z"> </path>
-                                                    </g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <g id="7935ec95c421cee6d86eb22ecd125006">
+                                                    <path style="display: inline;" d="M308.214,337.861l-5.663-13.064L253.93,209.107c-16.056-40.931-56.085-68.601-101.198-68.601 c-61.043,0-110.576,51.706-110.576,115.524c0,63.756,49.533,115.493,110.576,115.493c42.618,0,79.604-25.164,98.062-62.007 l19.668,47.329c-27.876,35.526-70.298,58.155-117.729,58.155C68.645,415.002,0.5,343.886,0.5,256.031 c0-87.834,68.145-159.033,152.231-159.033c63.446,0,114.696,35.361,140.741,98.093c1.946,4.865,27.516,67.255,49.834,120.369 c13.788,32.856,25.537,54.678,63.776,56.023c37.441,1.325,63.249-22.484,63.249-52.648c0-29.45-19.7-36.542-52.825-48.042 c-59.543-20.486-90.308-41.065-90.308-90.401c0-48.115,31.303-80.205,82.295-80.205c33.137,0,57.162,15.424,73.756,46.169 l-32.618,17.37c-12.235-17.909-25.765-25-42.97-25c-23.934,0-40.94,17.381-40.94,40.465c0,32.805,28.095,37.742,67.348,51.179 c52.866,17.981,77.431,38.529,77.431,89.801c0,53.86-44.232,93.093-102.006,93.01C356.256,412.942,327.861,385.769,308.214,337.861 z"> </path>
                                                 </g>
+                                            </g>
 
-                                            </svg>
-                                            Last.fm
-                                        </a>
+                                        </svg>
+                                        Last.fm
+                                    </a>
 
                                 </div>
                             </div>
@@ -948,13 +946,10 @@
                 {{-- Brand col --}}
                 <div class="p-10 border-r border-b md:border-b-0 border-white/10 flex flex-col gap-5">
                     <a href="#" class="flex items-center gap-2.5">
-                        <div class="w-8 h-8 rounded-full flex items-center justify-center"
-                            style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
-                            <svg class="w-3.5 h-3.5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </div>
-                        <span class="text-white font-bold text-lg tracking-tight">SimilArt</span>
+                        <svg class="h-5.5 w-5.5" fill="#43A047" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                            <path d="M508.5-668.5Q520-657 520-640v480q0 17-11.5 28.5T480-120q-17 0-28.5-11.5T440-160v-480q0-17 11.5-28.5T480-680q17 0 28.5 11.5Zm-160 120Q360-537 360-520v240q0 17-11.5 28.5T320-240q-17 0-28.5-11.5T280-280v-240q0-17 11.5-28.5T320-560q17 0 28.5 11.5Zm320 0Q680-537 680-520v240q0 17-11.5 28.5T640-240q-17 0-28.5-11.5T600-280v-240q0-17 11.5-28.5T640-560q17 0 28.5 11.5ZM480-760q-45 0-84.5 22.5T333-676q-32 54-87.5 85T127-560h-7q-17 0-28.5-11.5T80-600q0-17 11.5-28.5T120-640h7q42 0 78.5-21t58.5-57q34-57 91.5-89.5T480-840q67 0 124.5 32.5T696-718q22 36 58.5 57t78.5 21h7q17 0 28.5 11.5T880-600q0 17-11.5 28.5T840-560h-6q-63 0-118.5-31T628-676q-23-39-62.5-61.5T480-760ZM131.5-371.5Q120-383 120-400t11.5-28.5Q143-440 160-440t28.5 11.5Q200-417 200-400t-11.5 28.5Q177-360 160-360t-28.5-11.5Zm640 0Q760-383 760-400t11.5-28.5Q783-440 800-440t28.5 11.5Q840-417 840-400t-11.5 28.5Q817-360 800-360t-28.5-11.5Z" />
+                        </svg>
+                        <span class="text-green-600 font-bold text-lg tracking-tight">SimilArt</span>
                     </a>
                     <p class="text-gray-500 text-sm leading-relaxed">
                         Discover artists who sound just like the ones you love.
