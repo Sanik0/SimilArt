@@ -10,13 +10,13 @@ SimilArt is a music artist discovery web app that lets you search for any artist
 ## Screenshots
 
 ### Home 
-![Homepage](SimilArt/screenshots/home.png)
+![Home](SimilArt/public/screenshots/home.png)
 
 ### Home mobile
-![Article Page](SimilArt/screenshots/homemobile.png)
+![Home Mobile](SimilArt/screenshots/homemobile.png)
 
 ### Search Section
-![Quiz Page](SimilArt/screenshots/search.png)
+![Search Section](SimilArt/screenshots/search.png)
 
 ## ✨ Features
 
