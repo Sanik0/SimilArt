@@ -758,7 +758,6 @@
 
         </div>
     </section>
-
     {{-- FAQ --}}
     <section class="w-full flex flex-col items-center justify-center bg-black px-4 py-0">
         <div class="w-full max-w-6xl mx-auto">
@@ -771,8 +770,9 @@
                     <h2 class="text-white text-3xl md:text-4xl font-bold mb-2">Your Questions,<br>Answered</h2>
                     <p class="text-gray-500 text-sm leading-relaxed mt-3">Everything you need to know about SimilArt.</p>
                 </div>
-                <div class="p-10 flex items-center justify-end">
-                    <a href="#explore" class="inline-flex items-center gap-2 text-green-400 text-sm font-medium hover:text-green-300 transition-colors duration-200">
+                <div class="flex items-end justify-end">
+                    <a href="#explore"
+                        class="flex-1 w-full flex items-center gap-3 px-10 py-8 border-t border-white/10 text-green-600 hover:text-green-500 hover:bg-white/[0.02] transition-all duration-200 text-sm group">
                         Start exploring now
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -860,99 +860,116 @@
 
         </div>
     </section>
+    {{-- CTA SECTION --}}
+    <section class="w-full flex flex-col items-center justify-center bg-black px-4 py-0">
+        <div class="w-full max-w-6xl mx-auto">
 
-    <script>
-        // --- Testimonials ---
-        const testimonials = [{
-                initials: 'JD',
-                quote: '"SimilArt is genuinely the best way to explore music. I searched for one artist and ended up discovering 10 more I love."',
-                name: 'John Doe',
-                role: 'Music Listener and Enthusiast'
-            },
-            {
-                initials: 'SR',
-                quote: '"I found my new favorite artist in under a minute. The floating bubbles make it so fun to explore — I can\'t stop clicking."',
-                name: 'Sofia R.',
-                role: 'Independent Music Blogger'
-            },
-            {
-                initials: 'MK',
-                quote: '"Finally a tool that actually understands music similarity. The previews are a great touch — I know exactly what I\'m getting into."',
-                name: 'Marcus K.',
-                role: 'Playlist Curator'
-            },
-            {
-                initials: 'AL',
-                quote: '"SimilArt helped me get out of my music bubble. I went from only listening to Drake to discovering a whole world of artists."',
-                name: 'Aisha L.',
-                role: 'Casual Listener'
-            },
-        ];
+            <div class="w-full h-px bg-white/10"></div>
 
-        let currentTestimonial = 0;
+            <div class="flex flex-col items-center justify-center text-center py-24 px-4 relative overflow-hidden">
 
-        function renderTestimonial() {
-            const t = testimonials[currentTestimonial];
-            const card = document.getElementById('testimonial-card');
-            card.style.opacity = '0';
-            card.style.transition = 'opacity 0.2s ease';
-            setTimeout(() => {
-                document.getElementById('testimonial-initials').textContent = t.initials;
-                document.getElementById('testimonial-quote').textContent = t.quote;
-                document.getElementById('testimonial-name').textContent = t.name;
-                document.getElementById('testimonial-role').textContent = t.role;
-                card.style.opacity = '1';
-            }, 200);
-        }
+                {{-- glow --}}
+                <div class="absolute inset-0 pointer-events-none"
+                    style="background: radial-gradient(ellipse at center, rgba(16,185,80,0.1) 0%, transparent 65%); filter: blur(20px);">
+                </div>
 
-        function nextTestimonial() {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            renderTestimonial();
-        }
+                <h2 class="relative z-10 text-white text-4xl md:text-5xl font-bold leading-tight mb-5">
+                    Ready to discover<br>your next favorite artist?
+                </h2>
+                <p class="relative z-10 text-gray-400 text-sm md:text-base leading-relaxed mb-8 max-w-md">
+                    Search any artist and instantly explore who sounds just like them — no account needed, completely free.
+                </p>
+                <a href="#explore"
+                    class="relative z-10 inline-flex items-center px-7 py-3 rounded-full text-black text-sm font-semibold transition-all duration-200"
+                    style="background: #10b954; box-shadow: 0 0 24px rgba(16,185,80,0.45);"
+                    onmouseover="this.style.boxShadow='0 0 40px rgba(16,185,80,0.65)'"
+                    onmouseout="this.style.boxShadow='0 0 24px rgba(16,185,80,0.45)'">
+                    Start Exploring Now
+                </a>
+            </div>
 
-        function prevTestimonial() {
-            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-            renderTestimonial();
-        }
+            <div class="w-full h-px bg-white/10"></div>
 
-        // --- FAQ ---
-        function toggleFaq(el) {
-            const answer = el.nextElementSibling;
-            const icon = el.querySelector('.faq-icon');
-            const isOpen = !answer.classList.contains('hidden');
+        </div>
+    </section>
 
-            // Close all
-            document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
-            document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+    {{-- FOOTER --}}
+    {{-- FOOTER --}}
+    <footer class="w-full bg-black px-4 py-0">
+        <div class="w-full max-w-6xl mx-auto">
 
-            if (!isOpen) {
-                answer.classList.remove('hidden');
-                icon.textContent = '−';
-            }
-        }
-    </script>
+            <div class="w-full h-px bg-white/10"></div>
 
-    <style>
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
+            <div class="grid grid-cols-1 md:grid-cols-4 border-b border-white/10">
 
-            100% {
-                transform: translateX(-50%);
-            }
-        }
+                {{-- Brand col --}}
+                <div class="p-10 border-r border-b md:border-b-0 border-white/10 flex flex-col gap-5">
+                    <a href="/" class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+                            <svg class="w-3.5 h-3.5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                        <span class="text-white font-bold text-lg tracking-tight">SimilArt</span>
+                    </a>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Discover artists who sound just like the ones you love.
+                    </p>
+                </div>
 
-        @keyframes marquee-reverse {
-            0% {
-                transform: translateX(-50%);
-            }
+                {{-- Navigation --}}
+                <div class="p-10 border-r border-b md:border-b-0 border-white/10 flex flex-col gap-5">
+                    <p class="text-white text-xs font-semibold tracking-wide uppercase">Navigation</p>
+                    <ul class="flex flex-col gap-3">
+                        <li><a href="#explore" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Search Artist</a></li>
+                        <li><a href="#why" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Why SimilArt</a></li>
+                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">SimilArt</a></li>
+                        <li><a href="#how" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">How it Works</a></li>
+                        <li><a href="#testimonials" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Testimonials</a></li>
+                        <li><a href="#faq" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">FAQ</a></li>
+                    </ul>
+                </div>
 
-            100% {
-                transform: translateX(0);
-            }
-        }
-    </style>
+                {{-- Introduction --}}
+                <div class="p-10 border-r border-b md:border-b-0 border-white/10 flex flex-col gap-5">
+                    <p class="text-white text-xs font-semibold tracking-wide uppercase">Introduction</p>
+                    <ul class="flex flex-col gap-3">
+                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Quickstart</a></li>
+                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Figma Design System</a></li>
+                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">UI Components</a></li>
+                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Technologies</a></li>
+                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Integration Guides</a></li>
+                    </ul>
+                </div>
+
+                {{-- Socials / extra --}}
+                <div class="p-10 border-b md:border-b-0 border-white/10 flex flex-col gap-5">
+                    <p class="text-white text-xs font-semibold tracking-wide uppercase">Follow Us</p>
+                    <ul class="flex flex-col gap-3">
+                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Twitter / X</a></li>
+                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Instagram</a></li>
+                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">TikTok</a></li>
+                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">YouTube</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            {{-- Bottom bar --}}
+            <div class="py-6 px-10 flex flex-col md:flex-row items-center justify-between gap-3 border-b border-white/10">
+                <p class="text-gray-600 text-xs">
+                    © 2026 <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">R. Sanico</a> SimilArt. All Rights Reserved.
+                </p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-gray-600 text-xs hover:text-gray-400 transition-colors duration-200">Privacy Policy</a>
+                    <a href="#" class="text-gray-600 text-xs hover:text-gray-400 transition-colors duration-200">Terms of Service</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
     <style>
         .artist-default {
             cursor: pointer;
@@ -1071,6 +1088,26 @@
             }
         }
 
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes marquee-reverse {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
 
         .line-clamp-3 {
             display: -webkit-box;
@@ -1080,6 +1117,74 @@
         }
     </style>
     <script>
+        // --- Testimonials ---
+        const testimonials = [{
+                initials: 'JD',
+                quote: '"SimilArt is genuinely the best way to explore music. I searched for one artist and ended up discovering 10 more I love."',
+                name: 'John Doe',
+                role: 'Music Listener and Enthusiast'
+            },
+            {
+                initials: 'SR',
+                quote: '"I found my new favorite artist in under a minute. The floating bubbles make it so fun to explore — I can\'t stop clicking."',
+                name: 'Sofia R.',
+                role: 'Independent Music Blogger'
+            },
+            {
+                initials: 'MK',
+                quote: '"Finally a tool that actually understands music similarity. The previews are a great touch — I know exactly what I\'m getting into."',
+                name: 'Marcus K.',
+                role: 'Playlist Curator'
+            },
+            {
+                initials: 'AL',
+                quote: '"SimilArt helped me get out of my music bubble. I went from only listening to Drake to discovering a whole world of artists."',
+                name: 'Aisha L.',
+                role: 'Casual Listener'
+            },
+        ];
+
+        let currentTestimonial = 0;
+
+        function renderTestimonial() {
+            const t = testimonials[currentTestimonial];
+            const card = document.getElementById('testimonial-card');
+            card.style.opacity = '0';
+            card.style.transition = 'opacity 0.2s ease';
+            setTimeout(() => {
+                document.getElementById('testimonial-initials').textContent = t.initials;
+                document.getElementById('testimonial-quote').textContent = t.quote;
+                document.getElementById('testimonial-name').textContent = t.name;
+                document.getElementById('testimonial-role').textContent = t.role;
+                card.style.opacity = '1';
+            }, 200);
+        }
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            renderTestimonial();
+        }
+
+        function prevTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            renderTestimonial();
+        }
+
+        // --- FAQ ---
+        function toggleFaq(el) {
+            const answer = el.nextElementSibling;
+            const icon = el.querySelector('.faq-icon');
+            const isOpen = !answer.classList.contains('hidden');
+
+            // Close all
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+            document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+
+            if (!isOpen) {
+                answer.classList.remove('hidden');
+                icon.textContent = '−';
+            }
+        }
         const LASTFM_API_KEY = '9b63fe91f80052b4d121950664d7df8b';
         const LASTFM_BASE = 'https://ws.audioscrobbler.com/2.0/';
 
