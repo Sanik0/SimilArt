@@ -66,17 +66,9 @@
             {{-- Right Side Actions --}}
             <div class="flex items-center space-x-4">
 
-                {{-- Dark mode toggle --}}
-                <button class="text-gray-400 hover:text-white transition-colors duration-200 hidden md:block"
-                    title="Toggle theme">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
-                    </svg>
-                </button>
 
                 {{-- CTA Button --}}
-                <a href="#explore"
+                <a href="#quickstart"
                     class="text-base bg-green-600 hidden md:block font-medium transition-all duration-300 hover:shadow-[0px_0px_20px_rgba(0,255,0,0.5)] px-4 py-2 rounded-full">
                     Start Exploring
                 </a>
@@ -96,7 +88,7 @@
 
         {{-- Mobile Menu --}}
         <div class="hidden md:hidden px-6 pb-4" id="similart-mobile-menu"
-            style="background: rgba(0,0,0,0.95); border-top: 1px solid rgba(255,255,255,0.06);">
+            style="background: rgba(0,0,0,0.1); border-top: 1px solid rgba(255,255,255,0.06);">
             <ul class="flex flex-col space-y-1 pt-3">
                 <li><a href="#quickstart" class="block text-gray-400 hover:text-white text-sm py-2 px-3 rounded-lg hover:bg-white/5 transition-all">Quickstart</a></li>
                 <li><a href="#why" class="block text-gray-400 hover:text-white text-sm py-2 px-3 rounded-lg hover:bg-white/5 transition-all">Why Choose us</a></li>
@@ -104,10 +96,6 @@
                 <li><a href="#how" class="block text-gray-400 hover:text-white text-sm py-2 px-3 rounded-lg hover:bg-white/5 transition-all">How it Works</a></li>
                 <li><a href="#faq" class="block text-gray-400 hover:text-white text-sm py-2 px-3 rounded-lg hover:bg-white/5 transition-all">FAQ</a></li>
             </ul>
-            <a href="#explore"
-                class="mt-4 w-full inline-flex justify-center items-center px-5 py-2.5 rounded-full text-base font-semibold text-black bg-green-600">
-                Start Exploring
-            </a>
         </div>
     </nav>
     {{-- JUMBOTRON --}}
@@ -541,7 +529,7 @@
                         artists with the same energy, style, and sound. Each result is clickable,
                         letting you explore endlessly without ever leaving the page.
                     </p>
-                    <a href="#explore" class="inline-flex items-center gap-2 text-green-400 text-sm font-medium hover:text-green-300 transition-colors duration-200 w-fit">
+                    <a href="#quickstart" class="inline-flex items-center gap-2 text-green-400 text-sm font-medium hover:text-green-300 transition-colors duration-200 w-fit">
                         Start exploring now
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -771,7 +759,7 @@
                         </p>
                     </div>
                     <div>
-                        <p id="testimonial-name" class="text-white text-sm font-semibold">John Doe</p>
+                        <p id="testimonial-name" class="text-white text-sm font-semibold">Jacob H</p>
                         <p id="testimonial-role" class="text-gray-500 text-xs mt-0.5">Music Listener and Enthusiast</p>
                     </div>
                 </div>
@@ -813,7 +801,7 @@
                     <p class="text-gray-500 text-sm leading-relaxed mt-3">Everything you need to know about SimilArt.</p>
                 </div>
                 <div class="flex items-end justify-end">
-                    <a href="#explore"
+                    <a href="#quickstart"
                         class="flex-1 w-full flex items-center gap-3 px-10 py-8 border-t border-white/10 text-green-600 hover:text-green-500 hover:bg-white/[0.02] transition-all duration-200 text-sm group">
                         Start exploring now
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -921,7 +909,7 @@
                 <p class="relative z-10 text-gray-400 text-sm md:text-base leading-relaxed mb-8 max-w-md">
                     Search any artist and instantly explore who sounds just like them — no account needed, completely free.
                 </p>
-                <a href="#explore"
+                <a href="#quickstart"
                     class="relative z-10 inline-flex items-center px-7 py-3 rounded-full text-black text-sm font-semibold transition-all duration-200"
                     style="background: #10b954; box-shadow: 0 0 24px rgba(16,185,80,0.45);"
                     onmouseover="this.style.boxShadow='0 0 40px rgba(16,185,80,0.65)'"
