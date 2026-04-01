@@ -4,14 +4,13 @@ use Illuminate\Support\Facades\Route;
 
 use Illuminate\Support\Facades\Http;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('index', function () {
     return view('index');
 })->name('index');
 
+Route::get('/', function () {
+    return view('index');
+});
 
 Route::get('/api/deezer/search', function () {
     $query = request('q');

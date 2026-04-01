@@ -6,6 +6,9 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @vite('resources/css/app.css')
+    <title>
+        SimilArt - Discover New Artists with Just a Click
+    </title>
 </head>
 
 <body class="bg-black">
@@ -15,7 +18,7 @@
         <div class="max-w-screen-xl flex items-center justify-between mx-auto px-6 py-3">
 
             {{-- Logo --}}
-            <a href="/" class="flex items-center space-x-2.5">
+            <a href="#" class="flex items-center space-x-2.5">
                 {{-- Play icon badge --}}
                 <div class="w-8 h-8 rounded-full flex items-center justify-center"
                     style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
@@ -653,7 +656,7 @@
                                 <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
                                 </svg>
-                                <span class="text-gray-500 text-xs">Drake</span>
+                                <span class="text-gray-500 text-xs">Laufey</span>
                                 <span class="ml-auto w-1.5 h-3.5 bg-green-400 rounded-sm animate-pulse"></span>
                             </div>
                         </div>
@@ -676,8 +679,8 @@
                                 <img src="https://i.pravatar.cc/40?img=3" class="w-full h-full object-cover" alt="artist" />
                             </div>
                             <div>
-                                <p class="text-white text-xs font-semibold">Drake</p>
-                                <p class="text-gray-500 text-[10px]">Hip Hop | Rap</p>
+                                <p class="text-white text-xs font-semibold">Laufey</p>
+                                <p class="text-gray-500 text-[10px]">Bossa Nova | Jazz Pop</p>
                                 <p class="text-green-400 text-[10px]">55M monthly listeners</p>
                             </div>
                             <div class="ml-auto w-6 h-6 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
@@ -705,25 +708,25 @@
                                 <div class="w-9 h-9 rounded-full border border-green-500/40 overflow-hidden bg-gray-700">
                                     <img src="https://i.pravatar.cc/36?img=11" class="w-full h-full object-cover" alt="" />
                                 </div>
-                                <span class="text-white text-[9px]">The Weeknd</span>
+                                <span class="text-white text-[9px]">Phoebe Bridgers</span>
                             </div>
                             <div class="absolute top-4 left-1/3 flex flex-col items-center gap-1">
                                 <div class="w-11 h-11 rounded-full border-2 border-green-500/60 overflow-hidden bg-gray-700">
                                     <img src="https://i.pravatar.cc/44?img=12" class="w-full h-full object-cover" alt="" />
                                 </div>
-                                <span class="text-white text-[9px]">J. Cole</span>
+                                <span class="text-white text-[9px]">Beabadobee</span>
                             </div>
                             <div class="absolute top-1 right-6 flex flex-col items-center gap-1">
                                 <div class="w-9 h-9 rounded-full border border-white/20 overflow-hidden bg-gray-700">
                                     <img src="https://i.pravatar.cc/36?img=13" class="w-full h-full object-cover" alt="" />
                                 </div>
-                                <span class="text-white text-[9px]">Kendrick</span>
+                                <span class="text-white text-[9px]">Clairo</span>
                             </div>
                             <div class="absolute bottom-0 left-1/2 flex flex-col items-center gap-1">
                                 <div class="w-8 h-8 rounded-full border border-white/20 overflow-hidden bg-gray-700">
                                     <img src="https://i.pravatar.cc/32?img=14" class="w-full h-full object-cover" alt="" />
                                 </div>
-                                <span class="text-white text-[9px]">Future</span>
+                                <span class="text-white text-[9px]">Faye Webster</span>
                             </div>
                         </div>
                     </div>
@@ -944,7 +947,7 @@
 
                 {{-- Brand col --}}
                 <div class="p-10 border-r border-b md:border-b-0 border-white/10 flex flex-col gap-5">
-                    <a href="/" class="flex items-center gap-2.5">
+                    <a href="#" class="flex items-center gap-2.5">
                         <div class="w-8 h-8 rounded-full flex items-center justify-center"
                             style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
                             <svg class="w-3.5 h-3.5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
@@ -962,9 +965,9 @@
                 <div class="p-10 border-r border-b md:border-b-0 border-white/10 flex flex-col gap-5">
                     <p class="text-white text-xs font-semibold tracking-wide uppercase">Navigation</p>
                     <ul class="flex flex-col gap-3">
-                        <li><a href="#explore" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Search Artist</a></li>
+                        <li><a href="#quickstart" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Search Artist</a></li>
                         <li><a href="#why" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Why SimilArt</a></li>
-                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">SimilArt</a></li>
+                        <li><a href="#quickstart" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Quick Start</a></li>
                         <li><a href="#how" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">How it Works</a></li>
                         <li><a href="#testimonials" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Testimonials</a></li>
                         <li><a href="#faq" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">FAQ</a></li>
@@ -973,24 +976,20 @@
 
                 {{-- Introduction --}}
                 <div class="p-10 border-r border-b md:border-b-0 border-white/10 flex flex-col gap-5">
-                    <p class="text-white text-xs font-semibold tracking-wide uppercase">Introduction</p>
+                    <p class="text-white text-xs font-semibold tracking-wide uppercase">Music Platforms</p>
                     <ul class="flex flex-col gap-3">
-                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Quickstart</a></li>
-                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Figma Design System</a></li>
-                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">UI Components</a></li>
-                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Technologies</a></li>
-                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Integration Guides</a></li>
+                        <li><a href="https://last.fm" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Last.fm</a></li>
+                        <li><a href="https://music.apple.com" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Apple Music</a></li>
+                        <li><a href="https://deezer.com" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Deezer</a></li>
+                        <li><a href="https://spotify.com" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Spotify</a></li>
                     </ul>
                 </div>
 
                 {{-- Socials / extra --}}
                 <div class="p-10 border-b md:border-b-0 border-white/10 flex flex-col gap-5">
-                    <p class="text-white text-xs font-semibold tracking-wide uppercase">Follow Us</p>
+                    <p class="text-white text-xs font-semibold tracking-wide uppercase">Other Tools</p>
                     <ul class="flex flex-col gap-3">
-                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Twitter / X</a></li>
-                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">Instagram</a></li>
-                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">TikTok</a></li>
-                        <li><a href="#" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">YouTube</a></li>
+                        <li><a href="https://wikiquiz-oac9s0kfq-ronan-sanicos-projects.vercel.app/" class="text-gray-500 text-sm hover:text-white transition-colors duration-200">WikiQuiz</a></li>
                     </ul>
                 </div>
 

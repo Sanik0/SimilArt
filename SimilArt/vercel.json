@@ -1,0 +1,38 @@
+{
+    "version": 2,
+    "framework": null,
+    "builds": [
+        {
+            "src": "api/index.php",
+            "use": "vercel-php@0.7.1"
+        },
+        {
+            "src": "public/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/build/(.*)",
+            "dest": "/public/build/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "env": {
+        "APP_NAME": "SimilArt",
+        "APP_ENV": "production",
+        "APP_KEY": "base64:4cDh4LjReu4wTKBA7B4MjwLUnZGC6oqCFK9nSRSDuK4=",
+        "APP_DEBUG": "true",
+        "APP_URL": "https://similart.vercel.app",
+        "ASSET_URL": "https://similart.vercel.app",
+        "LOG_CHANNEL": "stderr",
+        "VIEW_COMPILED_PATH": "/tmp/views",
+        "CACHE_STORE": "array",
+        "SESSION_DRIVER": "cookie",
+        "QUEUE_CONNECTION": "sync",
+        "LASTFM_API_KEY": "9b63fe91f80052b4d121950664d7df8b"
+    }
+}
