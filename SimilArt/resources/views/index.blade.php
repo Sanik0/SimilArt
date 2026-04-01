@@ -191,25 +191,62 @@
                                 <span id="artist-popularity" class="text-xs text-gray-400 mt-0.5">23,906,313 fans on Deezer</span>
                                 <span id="artist-listeners" class="text-sm text-green-400 font-medium mt-1">55,441,858 monthly listeners</span>
                                 <p id="artist-bio" class="text-xs text-gray-400 text-center px-4 mt-2 line-clamp-3">Aubrey Drake Graham is a Canadian rapper, singer, songwriter, and actor. He is one of the world's best-selling music artists with over 170 million records sold worldwide.</p>
-                                <div class="flex overflow-hidden mt-4 md:mt-6 flex-col w-full">
+                                <div class="grid grid-cols-2 overflow-hidden mt-4 md:mt-6 w-full border-t border-[#323232]">
+
                                     <a id="deezer-link" href="https://www.deezer.com/artist/246791" target="_blank"
-                                        class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
+                                        class="inline-flex justify-center items-center gap-2 cursor-pointer text-white hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4 border-b border-r border-[#323232]">
                                         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                                             <path d="M18.81 11.282H24v1.474h-5.19zm0 3.21H24v1.474h-5.19zm0-6.418H24v1.473h-5.19zM0 17.906h5.19v-1.474H0zm6.462 0h5.19v-1.474h-5.19zm6.463 0h5.19v-1.474h-5.19zm6.462 0H24v-1.474h-5.19zM0 14.492h5.19v-1.474H0zm6.462 0h5.19v-1.474h-5.19zm6.463 0h5.19v-1.474h-5.19zM6.462 11.08h5.19V9.606h-5.19zm6.463 0h5.19V9.606h-5.19z" />
                                         </svg>
-                                        Listen on Deezer
+                                        Deezer
                                     </a>
+
                                     <a id="apple-music-link" href="https://music.apple.com/search?term=Drake" target="_blank"
-                                        class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
-                                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.048-2.31-2.1-3.123a5.022 5.022 0 00-1.515-.94c-.938-.332-1.894-.519-2.876-.548C16.67.305 16.076.3 15.482.296H8.518C7.924.3 7.33.305 6.737.323c-.982.029-1.938.216-2.876.548a5.014 5.014 0 00-1.515.94C1.294 2.624.563 3.624.246 4.934a9.23 9.23 0 00-.24 2.19C-.006 7.738 0 8.343 0 8.938v6.124c0 .595.006 1.2.03 1.794a9.23 9.23 0 00.24 2.19c.317 1.31 1.048 2.31 2.1 3.123a5.014 5.014 0 001.515.94c.938.332 1.894.519 2.876.548.593.018 1.187.024 1.781.02h6.964c.594.004 1.188-.002 1.781-.02.982-.029 1.938-.216 2.876-.548a5.014 5.014 0 001.515-.94c1.052-.813 1.783-1.813 2.1-3.123a9.23 9.23 0 00.24-2.19c.024-.594.03-1.199.03-1.794V8.938c0-.595-.006-1.2-.006-1.814zM12 18.404a6.404 6.404 0 110-12.808 6.404 6.404 0 010 12.808zm6.61-11.56a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM12 7.01a4.99 4.99 0 100 9.98A4.99 4.99 0 0012 7.01z" />
+                                        class="inline-flex justify-center items-center gap-2 cursor-pointer text-white hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4 border-b border-r border-[#323232]">
+                                        {{-- Apple Music note icon --}}
+                                        <svg class="w-4 h-4" fill="#ffffff" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                                            <g id="SVGRepo_iconCarrier">
+
+                                                <path d="m24 6.124c0-.029.001-.063.001-.097 0-.743-.088-1.465-.253-2.156l.013.063c-.312-1.291-1.1-2.359-2.163-3.031l-.02-.012c-.536-.35-1.168-.604-1.847-.723l-.03-.004c-.463-.084-1.003-.138-1.553-.15h-.011c-.04 0-.083-.01-.124-.013h-12.025c-.152.01-.3.017-.455.026-.791.016-1.542.161-2.242.415l.049-.015c-1.306.501-2.327 1.495-2.853 2.748l-.012.033c-.17.409-.297.885-.36 1.38l-.003.028c-.051.343-.087.751-.1 1.165v.016c0 .032-.007.062-.01.093v12.224c.01.14.017.283.027.424.02.861.202 1.673.516 2.416l-.016-.043c.609 1.364 1.774 2.387 3.199 2.792l.035.009c.377.111.817.192 1.271.227l.022.001c.555.053 1.11.06 1.667.06h11.028c.554 0 1.099-.037 1.633-.107l-.063.007c.864-.096 1.645-.385 2.321-.823l-.021.013c.825-.539 1.47-1.29 1.867-2.176l.013-.032c.166-.383.295-.829.366-1.293l.004-.031c.084-.539.132-1.161.132-1.794 0-.086-.001-.171-.003-.256v.013q0-5.7 0-11.394zm-6.424 3.99v5.712c.001.025.001.054.001.083 0 .407-.09.794-.252 1.14l.007-.017c-.273.562-.771.979-1.373 1.137l-.015.003c-.316.094-.682.156-1.06.173h-.01c-.029.002-.062.002-.096.002-1.033 0-1.871-.838-1.871-1.871 0-.741.431-1.382 1.056-1.685l.011-.005c.293-.14.635-.252.991-.32l.027-.004c.378-.082.758-.153 1.134-.24.264-.045.468-.252.51-.513v-.003c.013-.057.02-.122.02-.189 0-.002 0-.003 0-.005q0-2.723 0-5.443c-.001-.066-.01-.13-.027-.19l.001.005c-.026-.134-.143-.235-.283-.235-.006 0-.012 0-.018.001h.001c-.178.013-.34.036-.499.07l.024-.004q-1.14.225-2.28.456l-3.7.748c-.016 0-.032.01-.048.013-.222.03-.392.219-.392.447 0 .015.001.03.002.045v-.002.13q0 3.9 0 7.801c.001.028.001.062.001.095 0 .408-.079.797-.224 1.152l.007-.021c-.264.614-.792 1.072-1.436 1.235l-.015.003c-.319.096-.687.158-1.067.172h-.008c-.031.002-.067.003-.104.003-.913 0-1.67-.665-1.815-1.536l-.001-.011c-.02-.102-.031-.218-.031-.338 0-.785.485-1.458 1.172-1.733l.013-.004c.315-.127.687-.234 1.072-.305l.036-.005c.287-.06.575-.116.86-.177.341-.05.6-.341.6-.693 0-.007 0-.015 0-.022v.001-.15q0-4.44 0-8.883c0-.002 0-.004 0-.007 0-.129.015-.254.044-.374l-.002.011c.066-.264.277-.466.542-.517l.004-.001c.255-.066.515-.112.774-.165.733-.15 1.466-.3 2.2-.444l2.27-.46c.67-.134 1.34-.27 2.01-.4.181-.042.407-.079.637-.104l.027-.002c.018-.002.04-.004.061-.004.27 0 .489.217.493.485.008.067.012.144.012.222v.001q0 2.865 0 5.732z" />
+
+                                            </g>
+
                                         </svg>
-                                        Listen on Apple Music
+                                        Apple Music
                                     </a>
-                                    <a id="lastfm-link" href="https://www.last.fm/music/Drake" target="_blank"
-                                        class="inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
-                                        View on Last.fm
-                                    </a>
+
+                                    <a id="spotify-link" href="https://open.spotify.com/search/Drake/artists" target="_blank"
+                                        class="hidden inline-flex justify-center items-center gap-2 cursor-pointer text-white box-border border-r border-[#323232] hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
+                                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                                        </svg>
+                                        Spotify
+                                        </a>
+
+                                        <a id="lastfm-link" href="https://www.last.fm/music/Drake" target="_blank"
+                                            class="inline-flex justify-center items-center gap-2 cursor-pointer text-white hover:bg-[rgba(102,102,102,0.1)] transition-all duration-300 font-light text-sm text-center p-4">
+                                            {{-- Last.fm soundwave icon --}}
+                                            <svg class="w-4 h-4" fill="#ffffff" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 512 512" xml:space="preserve" stroke="#ffffff" stroke-width="0.00512">
+
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <g id="7935ec95c421cee6d86eb22ecd125006">
+                                                        <path style="display: inline;" d="M308.214,337.861l-5.663-13.064L253.93,209.107c-16.056-40.931-56.085-68.601-101.198-68.601 c-61.043,0-110.576,51.706-110.576,115.524c0,63.756,49.533,115.493,110.576,115.493c42.618,0,79.604-25.164,98.062-62.007 l19.668,47.329c-27.876,35.526-70.298,58.155-117.729,58.155C68.645,415.002,0.5,343.886,0.5,256.031 c0-87.834,68.145-159.033,152.231-159.033c63.446,0,114.696,35.361,140.741,98.093c1.946,4.865,27.516,67.255,49.834,120.369 c13.788,32.856,25.537,54.678,63.776,56.023c37.441,1.325,63.249-22.484,63.249-52.648c0-29.45-19.7-36.542-52.825-48.042 c-59.543-20.486-90.308-41.065-90.308-90.401c0-48.115,31.303-80.205,82.295-80.205c33.137,0,57.162,15.424,73.756,46.169 l-32.618,17.37c-12.235-17.909-25.765-25-42.97-25c-23.934,0-40.94,17.381-40.94,40.465c0,32.805,28.095,37.742,67.348,51.179 c52.866,17.981,77.431,38.529,77.431,89.801c0,53.86-44.232,93.093-102.006,93.01C356.256,412.942,327.861,385.769,308.214,337.861 z"> </path>
+                                                    </g>
+                                                </g>
+
+                                            </svg>
+                                            Last.fm
+                                        </a>
+
                                 </div>
                             </div>
                         </div>

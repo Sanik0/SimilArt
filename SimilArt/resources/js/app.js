@@ -256,6 +256,9 @@ async function renderArtistCard(artist, deezerArtist) {
         playBtn.classList.add('opacity-30', 'cursor-not-allowed');
         playBtn.title = 'No preview available';
     }
+    const spotifyUrl = `https://open.spotify.com/search/${encodeURIComponent(artist.name)}/artists`;
+    document.getElementById('spotify-link').href = spotifyUrl;
+    document.getElementById('spotify-link').classList.remove('hidden');
 
     document.getElementById('artist-loading').classList.add('hidden');
     document.getElementById('artist-empty').classList.add('hidden');
