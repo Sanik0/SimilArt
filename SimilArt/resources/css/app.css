@@ -12,3 +12,148 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+.artist-default {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.artist-default:hover img {
+    box-shadow: 0 0 20px rgba(16, 185, 80, 0.7), 0 0 40px rgba(16, 185, 80, 0.3);
+}
+
+.artist-default span {
+    transition: color 0.3s ease;
+}
+
+.artist-default:hover span {
+    color: #4ade80;
+}
+
+.artist-float {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.artist-float:hover img {
+    box-shadow: 0 0 20px rgba(16, 185, 80, 0.7), 0 0 40px rgba(16, 185, 80, 0.3);
+}
+
+.artist-float span {
+    transition: color 0.3s ease;
+}
+
+.artist-float:hover span {
+    color: #4ade80;
+}
+
+.skeleton {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 25%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.04) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Artist bubble pop in */
+@keyframes popIn {
+    0% {
+        transform: scale(0) translateY(10px);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.1) translateY(-3px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes float1 {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    33% {
+        transform: translateY(-10px) translateX(4px);
+    }
+
+    66% {
+        transform: translateY(6px) translateX(-4px);
+    }
+}
+
+@keyframes float2 {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    33% {
+        transform: translateY(8px) translateX(-5px);
+    }
+
+    66% {
+        transform: translateY(-8px) translateX(5px);
+    }
+}
+
+@keyframes float3 {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    25% {
+        transform: translateY(-8px) translateX(6px);
+    }
+
+    75% {
+        transform: translateY(8px) translateX(-3px);
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-reverse {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
