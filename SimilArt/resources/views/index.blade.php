@@ -5,6 +5,19 @@
     <meta charset="utf-8" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Discover artists who sound just like the ones you love. Search any artist and instantly explore similar musicians with SimilArt.">
+    <meta name="keywords" content="similar artists, music discovery, find new music, artist recommendations">
+
+    <!-- Open Graph (for sharing on social media) -->
+    <meta property="og:title" content="SimilArt — Discover Similar Artists">
+    <meta property="og:description" content="Search any artist and instantly discover who sounds just like them.">
+    <meta property="og:url" content="https://similart.vercel.app">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SimilArt — Discover Similar Artists">
+    <meta name="twitter:description" content="Search any artist and instantly discover who sounds just like them.">
     <meta name="google-site-verification" content="G83VNIJytUBO3AOXISgoK2tzsu76105cJV1-KaQ6pNE" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960'><path fill='%2343A047' d='M508.5-668.5Q520-657 520-640v480q0 17-11.5 28.5T480-120q-17 0-28.5-11.5T440-160v-480q0-17 11.5-28.5T480-680q17 0 28.5 11.5Zm-160 120Q360-537 360-520v240q0 17-11.5 28.5T320-240q-17 0-28.5-11.5T280-280v-240q0-17 11.5-28.5T320-560q17 0 28.5 11.5Zm320 0Q680-537 680-520v240q0 17-11.5 28.5T640-240q-17 0-28.5-11.5T600-280v-240q0-17 11.5-28.5T640-560q17 0 28.5 11.5ZM480-760q-45 0-84.5 22.5T333-676q-32 54-87.5 85T127-560h-7q-17 0-28.5-11.5T80-600q0-17 11.5-28.5T120-640h7q42 0 78.5-21t58.5-57q34-57 91.5-89.5T480-840q67 0 124.5 32.5T696-718q22 36 58.5 57t78.5 21h7q17 0 28.5 11.5T880-600q0 17-11.5 28.5T840-560h-6q-63 0-118.5-31T628-676q-23-39-62.5-61.5T480-760ZM131.5-371.5Q120-383 120-400t11.5-28.5Q143-440 160-440t28.5 11.5Q200-417 200-400t-11.5 28.5Q177-360 160-360t-28.5-11.5Zm640 0Q760-383 760-400t11.5-28.5Q783-440 800-440t28.5 11.5Q840-417 840-400t-11.5 28.5Q817-360 800-360t-28.5-11.5Z'/></svg>">
     @vite('resources/css/app.css')

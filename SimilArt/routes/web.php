@@ -60,3 +60,15 @@ Route::get('/app/deezer/similar', function () {
     $response = \Illuminate\Support\Facades\Http::get("https://api.deezer.com/artist/{$id}/related?limit=12");
     return response()->json($response->json());
 });
+
+Route::get('/sitemap.xml', function () {
+    $content = '<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://similart.vercel.app/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+</urlset>';
+    return response($content, 200)->header('Content-Type', 'application/xml');
+});
