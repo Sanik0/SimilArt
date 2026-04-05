@@ -11,7 +11,7 @@
     <!-- Open Graph (for sharing on social media) -->
     <meta property="og:title" content="SimilArt — Discover Similar Artists">
     <meta property="og:description" content="Search any artist and instantly discover who sounds just like them.">
-    <meta property="og:url" content="https://similart.vercel.app">
+    <meta property="og:url" content="https://similart.online">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card -->
